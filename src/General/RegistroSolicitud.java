@@ -1,5 +1,5 @@
 
-package cronogrma;
+package General;
 
 
 import java.awt.Font;
@@ -189,7 +189,7 @@ public class RegistroSolicitud extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cronogrma/credito_compra_cartera (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/credito_compra_cartera (1).png"))); // NOI18N
         jLabel1.setText("Aprobar Solicitudes de Creditos");
 
         jButton1.setText("Visualizar Registros");
@@ -565,7 +565,7 @@ public class RegistroSolicitud extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cronogrma/banco mano amiga.png"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

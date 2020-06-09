@@ -1,5 +1,5 @@
 
-package cronogrma;
+package General;
 
 import java.awt.Font;
 

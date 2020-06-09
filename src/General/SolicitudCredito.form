@@ -125,7 +125,7 @@
           <Color blue="66" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/cronogrma/solicicred1.png"/>
+          <Image iconType="3" name="/General/solicicred1.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Solicitud de Credito"/>
       </Properties>
@@ -216,7 +216,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/cronogrma/garantia.png"/>
+              <Image iconType="3" name="/General/garantia.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Garantias"/>
           </Properties>
@@ -924,7 +924,7 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/cronogrma/guardar05.png"/>
+              <Image iconType="3" name="/General/guardar05.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
@@ -935,7 +935,7 @@
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/cronogrma/ver04.jpg"/>
+              <Image iconType="3" name="/General/ver04.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Registro"/>
           </Properties>
@@ -948,7 +948,7 @@
     <Component class="javax.swing.JLabel" name="jLabel45">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/cronogrma/banco mano amiga.png"/>
+          <Image iconType="3" name="/General/banco mano amiga.png"/>
         </Property>
       </Properties>
     </Component>
