@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-public class SolicitudCredito extends javax.swing.JFrame {
+public class SolicitudCredito extends javax.swing.JInternalFrame {
     
     static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
     static Connection conexion = null;
@@ -36,7 +36,6 @@ public class SolicitudCredito extends javax.swing.JFrame {
         jLabel3.setFont(new Font("arial", Font.BOLD, 12));
         jLabel4.setFont(new Font("arial", Font.BOLD, 12));
         
-         this.setLocationRelativeTo(null);
         
         this.getContentPane().setBackground(java.awt.Color.WHITE);
         
@@ -175,7 +174,8 @@ public class SolicitudCredito extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/solicicred1.png"))); // NOI18N
@@ -792,7 +792,7 @@ public class SolicitudCredito extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(48, 48, 48)
                 .addComponent(jLabel42))
         );

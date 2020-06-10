@@ -149,22 +149,32 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       SolicitudCredito sol=new SolicitudCredito();
-       sol.setVisible(true);
+        jDesktopPane1.removeAll();
+        SolicitudCredito sol=new SolicitudCredito();
+        jDesktopPane1.add(sol);
+        sol.show();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-
+        jDesktopPane1.removeAll();
+        SolicitudInversion solinv = new SolicitudInversion();
+        jDesktopPane1.add(solinv);
+        solinv.show();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        jDesktopPane1.removeAll();
         RegistroSolicitud r = new RegistroSolicitud();
-        r.setVisible(true);
+        jDesktopPane1.add(r);
+        r.show();
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        jDesktopPane1.removeAll();
         CreditosAprobados ca=new CreditosAprobados();
-        ca.setVisible(true);
+        jDesktopPane1.add(ca);
+        ca.show();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed

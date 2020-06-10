@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import javax.swing.table.DefaultTableModel;
 
 
-public class CreditosAprobados extends javax.swing.JFrame {
+public class CreditosAprobados extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
     
@@ -30,7 +30,6 @@ public class CreditosAprobados extends javax.swing.JFrame {
         
         this.jTable1.setModel(modelo);
         
-        this.setLocationRelativeTo(null);
         
         jLabel1.setFont(new Font("BahnSchrift SemiBold", Font.BOLD, 18));
     }
@@ -106,7 +105,8 @@ public class CreditosAprobados extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/ultima056.png"))); // NOI18N

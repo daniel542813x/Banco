@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class RegistroSolicitud extends javax.swing.JFrame {
+public class RegistroSolicitud extends javax.swing.JInternalFrame {
     
     static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
     static Connection conexion = null;
@@ -62,7 +62,6 @@ public class RegistroSolicitud extends javax.swing.JFrame {
         
         this.jTable1.setModel(modelo);
         
-         this.setLocationRelativeTo(null);
          
          SolicitudCredito ventana = new SolicitudCredito();
          
@@ -186,7 +185,8 @@ public class RegistroSolicitud extends javax.swing.JFrame {
         jTextField22 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/credito_compra_cartera (1).png"))); // NOI18N
