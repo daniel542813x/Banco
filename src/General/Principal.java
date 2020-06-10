@@ -108,6 +108,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Administrar Solicitudes de Inversion");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem8.setText("Creditos Aprobados");
@@ -197,6 +202,14 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(pg1);
         pg1.show();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        jDesktopPane1.removeAll();
+        RegistroSolicitudInv rinv=new RegistroSolicitudInv();
+        jDesktopPane1.add(rinv);
+        rinv.show();
+        
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
