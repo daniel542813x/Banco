@@ -63,6 +63,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
 
+        setClosable(true);
         setMaximizable(true);
         setPreferredSize(new java.awt.Dimension(1212, 1058));
 

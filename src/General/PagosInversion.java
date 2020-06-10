@@ -9,12 +9,12 @@ package General;
  *
  * @author estevan
  */
-public class PagosCredito extends javax.swing.JInternalFrame {
+public class PagosInversion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form PagosCredito
      */
-    public PagosCredito() {
+    public PagosInversion() {
         initComponents();
         this.getContentPane().setBackground(java.awt.Color.WHITE);
 
@@ -31,15 +31,15 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldInv = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableInv2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableInv = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -57,9 +57,9 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
         jPanel4.setBackground(new java.awt.Color(195, 236, 206));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldInv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldInvActionPerformed(evt);
             }
         });
 
@@ -68,7 +68,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableInv2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -76,7 +76,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
                 {null, null, null}
             },
             new String [] {
-                "Id Credito", "Cuota", "Estado"
+                "Id Inversion", "Cuota", "Estado"
             }
         ) {
             Class[] types = new Class [] {
@@ -87,7 +87,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableInv2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,7 +106,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableInv.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -114,7 +114,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Id Credito", "Nombre Completo", "Cuotas", "Valor", "Pagar"
+                "Id Inversion", "Nombre Completo", "Cuotas", "Valor", "Pagar"
             }
         ) {
             Class[] types = new Class [] {
@@ -125,7 +125,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableInv);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -155,7 +155,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setText("Creditos");
+        jLabel2.setText("Inversiones");
 
         jButton3.setText("Cancelar");
 
@@ -169,7 +169,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(38, 38, 38)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldInv, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -195,7 +195,7 @@ public class PagosCredito extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldInv, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
@@ -249,9 +249,9 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldInvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldInvActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -272,8 +272,8 @@ public class PagosCredito extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTableInv;
+    private javax.swing.JTable jTableInv2;
+    private javax.swing.JTextField jTextFieldInv;
     // End of variables declaration//GEN-END:variables
 }
