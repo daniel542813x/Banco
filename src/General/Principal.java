@@ -28,6 +28,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popupMenu1 = new java.awt.PopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -42,6 +43,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
 
+        popupMenu1.setLabel("popupMenu1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1336, 928));
 
@@ -53,15 +56,16 @@ public class Principal extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGap(0, 559, Short.MAX_VALUE)
         );
 
         getContentPane().add(jDesktopPane1, java.awt.BorderLayout.CENTER);
 
-        jMenuBar1.setBackground(java.awt.Color.BLACK
-        );
+        jMenuBar1.setBackground(new java.awt.Color(18, 94, 133));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), null));
 
-        jMenu1.setText("Registrar");
+        jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(0, 0, 0), null, null));
+        jMenu1.setText("Registrar      ");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem2.setText("Registrar Solicitud de Inversion");
@@ -81,11 +85,18 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Registrar Nuevo Cliente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Administracion de Solicitudes");
+        jMenu2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 51, 51), new java.awt.Color(102, 0, 51))));
+        jMenu2.setText("Administracion de Solicitudes     ");
+        jMenu2.setActionCommand("Administracion de Solicitudes    ");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem4.setText("Administrar Solicitudes de Credito");
@@ -109,7 +120,9 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBorder(new javax.swing.border.MatteBorder(null));
         jMenu3.setText("Pagos");
+        jMenu3.setActionCommand("   Pagos");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem6.setText("Pagos de Creditos");
@@ -154,6 +167,12 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(pg);
         pg.show();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        NuevoCliente nv = new NuevoCliente();
+        jDesktopPane1.add(nv);
+        nv.show();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,5 +223,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }
