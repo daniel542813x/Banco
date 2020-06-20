@@ -42,6 +42,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         modelo.addColumn("Día Solicitud");
         modelo.addColumn("Mes Solicitud");
         modelo.addColumn("Año Solicitud");
+        modelo.addColumn("Codigo Garantia");
         modelo.addColumn("Nombre");
         modelo.addColumn("Identificación");
         modelo.addColumn("Día nacimiento");
@@ -49,8 +50,11 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         modelo.addColumn("Año Nacimiento");
         modelo.addColumn("Sexo");
         modelo.addColumn("Edad");
-        modelo.addColumn("Inversion");
-        modelo.addColumn("Timepo de Inversion") ;
+        modelo.addColumn("Estrato");
+        modelo.addColumn("Estado Civil");
+        modelo.addColumn("Personas a Cargo");
+        modelo.addColumn("Ingresos");
+        modelo.addColumn("Egresos") ;
         modelo.addColumn("Ciudad") ;
         modelo.addColumn("Dirección");
         modelo.addColumn("Celular");
