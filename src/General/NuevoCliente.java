@@ -4,16 +4,31 @@
  * and open the template in the editor.
  */
 package General;
-
+import static General.RegistroSolicitud.cadenaConexion;
+import static General.RegistroSolicitud.cadenaDriver;
+import static General.RegistroSolicitud.conexion;
+import static General.RegistroSolicitud.consultaSQL;
+import static General.RegistroSolicitud.resultado;
+import static General.RegistroSolicitud.sentencia;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import org.postgresql.util.PSQLException;
 /**
  *
  * @author estevan
  */
 public class NuevoCliente extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form NuevoCliente
-     */
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
+    static Connection conexion = null;
+    static Statement sentencia = null;
+    static ResultSet resultado = null;
+    static String cadenaDriver = "org.postgresql.Driver";
+    static String consultaSQL;
+    static CreditoSolicitud objCreditoSolicitud;
     public NuevoCliente() {
         initComponents();
     }
@@ -62,6 +77,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -69,8 +85,10 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(174, 197, 226));
-        jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 3, true));
+
+        choice1.addItem("Cedula");
+        choice1.addItem("Pasaporte");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel1.setText("Tipo de Documento:");
@@ -98,6 +116,9 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel6.setText("Sexo");
+
+        choice2.addItem("F");
+        choice2.addItem("M");
 
         jLabel7.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel7.setText("Fecha de Nacimiento");
@@ -154,16 +175,16 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                         .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 29, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 29, Short.MAX_VALUE)))
+                                .addComponent(jLabel10)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33))
@@ -226,8 +247,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                 .addGap(75, 75, 75))
         );
 
-        jPanel3.setBackground(new java.awt.Color(174, 197, 226));
-        jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
         jLabel11.setText("Ciudad");
@@ -270,7 +290,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,22 +321,27 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jLabel16.setText("Datos de Contacto");
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
 
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel17.setText("Nuevo Cliente");
 
+        jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(51, 255, 51));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Registrado Exitosamente");
+        jLabel18.setVisible(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(517, 517, 517)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(478, 478, 478))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,6 +356,16 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel17))
                 .addGap(71, 71, 71))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(517, 517, 517)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(478, 478, 478))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(407, 407, 407))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +384,9 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -393,6 +430,46 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty()|| jTextField3.getText().isEmpty()|| jTextField4.getText().isEmpty()|| jTextField5.getText().isEmpty()|| jTextField6.getText().isEmpty()   
+            || jTextField7.getText().isEmpty()|| jTextField8.getText().isEmpty()|| jTextField9.getText().isEmpty()|| jTextField10.getText().isEmpty()|| jTextField11.getText().isEmpty()){
+            jLabel18.setForeground(new java.awt.Color(255, 0, 51));
+                jLabel18.setText("Error, Debe llenar todos los campos");
+                jLabel18.setVisible(true);
+        }else{
+            consultaSQL="INSERT INTO clientes values ('"+choice1.getSelectedItem()+"','"+jTextField1.getText()+"','"+jTextField3.getText()+"','"+jTextField2.getText()+"','"
+            + ""+choice2.getSelectedItem()+"','"+jTextField5.getText()+"','"+jTextField4.getText()+"','"+jTextField6.getText()+"','"+jTextField7.getText()+"','"
+            + jTextField8.getText()+"','"+jTextField10.getText()+"','"+jTextField9.getText()+"','"+jTextField11.getText()+"');";
+            conectarBD();  
+        }
+               
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void conectarBD() {
+        try {
+            Class.forName(cadenaDriver);
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
+            sentencia = conexion.createStatement();
+
+            resultado = sentencia.executeQuery(consultaSQL);
+        }catch (Exception e) {
+            String  mjs=e.getMessage();
+            String exito="No results were returned by the query";
+            String error="duplicate key";
+            if (mjs.contains(exito)){
+                jLabel18.setVisible(true);
+                jLabel18.setForeground(new java.awt.Color(51,255,51));
+                jLabel18.setText("Registrado exitosamente");
+
+            }else if (mjs.contains(error)){
+                jLabel18.setForeground(new java.awt.Color(255, 0, 51));
+                jLabel18.setText("Error, la cedula ya se encuentra registrada");
+                jLabel18.setVisible(true);
+
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Choice choice1;
@@ -408,6 +485,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
