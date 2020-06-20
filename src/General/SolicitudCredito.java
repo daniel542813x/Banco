@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 public class SolicitudCredito extends javax.swing.JInternalFrame {
     
-    static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
     static Connection conexion = null;
     static Statement sentencia = null;
     static ResultSet resultado = null;
@@ -45,7 +45,7 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
     static public void conectarBD_creditos() {
         try {
             Class.forName(cadenaDriver);
-            conexion = DriverManager.getConnection(cadenaConexion, "postgres", "12345");
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
             sentencia = conexion.createStatement();
 
             resultado = sentencia.executeQuery(consultaSQL);
@@ -845,7 +845,7 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
             
            
             String sentenciaSQL = new String();
-            sentenciaSQL = "INSERT INTO solicitud_creditos(numero_solicitud,dia_solicitud,mes_solicitud,ano_solicitud,codigo_garantia,nombre_cliente,numero_identificación,dia_nacimiento,mes_nacimiento,ano_nacimiento,sexo_cliente,edad_cliente,estrato_cliente,estado_civil,personas_cargo,ingresos,egresos,ciudad,direccion,numero_celular,email)";
+            sentenciaSQL = "INSERT INTO solicitud_creditos(numero_solicitud,dia_solicitud,mes_solicitud,ano_solicitud,codigo_garantia,nombre_cliente,numero_identificacion,dia_nacimiento,mes_nacimiento,ano_nacimiento,sexo_cliente,edad_cliente,estrato_cliente,estado_civil,personas_cargo,ingresos,egresos,ciudad,direccion,numero_celular,email)";
             sentenciaSQL = sentenciaSQL + " VALUES ("+ objCreditoSolicitud.numsolc +","+ objCreditoSolicitud.diasolicitud +"," + objCreditoSolicitud.messolicitud+"," + objCreditoSolicitud.añosolicitud+ ", " + objCreditoSolicitud.codigogarantia + ", '" + objCreditoSolicitud.nombrec+ "', " + objCreditoSolicitud.cedulac+ "," + objCreditoSolicitud.dianacimiento+ ", " + objCreditoSolicitud.mesnacimiento+", " + objCreditoSolicitud.añonacimiento + " , '" + objCreditoSolicitud.sexoc + "', "+ objCreditoSolicitud.edadc+", "+ objCreditoSolicitud.estratoc +",'"+objCreditoSolicitud.estadocivil+"', "+objCreditoSolicitud.personascargo+", "+objCreditoSolicitud.ingresos+", "+objCreditoSolicitud.egresos+", '"+objCreditoSolicitud.ciudadc+"','"+objCreditoSolicitud.direccionc+"', "+objCreditoSolicitud.celularc+", '"+objCreditoSolicitud.emailc+"')";
             sentencia.execute(sentenciaSQL);
             JOptionPane.showMessageDialog(this, "Guardado Correctamente");
@@ -969,7 +969,7 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
                 objCreditoSolicitud.setAñosolicitud(resultado.getInt("ano_solicitud"));
                 objCreditoSolicitud.setCodigogarantia(resultado.getInt("codigo_garantia"));
                 objCreditoSolicitud.setNombrec(resultado.getString("nombre_cliente"));
-                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificación"));
+                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificacion"));
                 objCreditoSolicitud.setDianacimiento(resultado.getInt("dia_nacimiento"));
                 objCreditoSolicitud.setMesnacimiento(resultado.getInt("mes_nacimiento"));
                 objCreditoSolicitud.setAñonacimiento(resultado.getInt("ano_nacimiento"));

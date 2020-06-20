@@ -16,13 +16,13 @@ import javax.swing.JOptionPane;
 
 public class SolicitudInversion extends javax.swing.JInternalFrame{
     
-    static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
     static Connection conexion = null;
     static Statement sentencia = null;
     static ResultSet resultado = null;
     static String cadenaDriver = "org.postgresql.Driver";
-    static String consultaSQL = "SELECT * FROM solicitud_creditos";
-    static CreditoSolicitud objCreditoSolicitud;
+    static String consultaSQL = "SELECT * FROM solicitud_inversion";
+    static InversionSolicitud objCreditoSolicitud;
 
     
     public SolicitudInversion() {
@@ -40,7 +40,7 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
     static public void conectarBD_creditos() {
         try {
             Class.forName(cadenaDriver);
-            conexion = DriverManager.getConnection(cadenaConexion, "postgres", "12345");
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
             sentencia = conexion.createStatement();
 
             resultado = sentencia.executeQuery(consultaSQL);
@@ -645,7 +645,7 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         try {
-            objCreditoSolicitud = new CreditoSolicitud();
+            objCreditoSolicitud = new InversionSolicitud();
             
             objCreditoSolicitud.numsolc=Integer.parseInt(jTextField1.getText());
             objCreditoSolicitud.diasolicitud=Integer.parseInt(jTextField2.getText());
@@ -658,8 +658,8 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
             objCreditoSolicitud.añonacimiento=Integer.parseInt(jTextField9.getText());
             objCreditoSolicitud.sexoc = jTextField10.getText();
             objCreditoSolicitud.edadc =  Integer.parseInt(jTextField11.getText());
-            objCreditoSolicitud.ingresos = Integer.parseInt(jTextField15.getText());
-            objCreditoSolicitud.egresos = Integer.parseInt(jTextField18.getText());
+            objCreditoSolicitud.inversion = Integer.parseInt(jTextField15.getText());
+            objCreditoSolicitud.tim_iv = Integer.parseInt(jTextField18.getText());
             objCreditoSolicitud.ciudadc = jTextField16.getText();
             objCreditoSolicitud.direccionc = jTextField19.getText();
             objCreditoSolicitud.celularc = Integer.parseInt(jTextField20.getText());
@@ -667,8 +667,8 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
             
            
             String sentenciaSQL = new String();
-            sentenciaSQL = "INSERT INTO solicitud_creditos(numero_solicitud,dia_solicitud,mes_solicitud,ano_solicitud,codigo_garantia,nombre_cliente,numero_identificación,dia_nacimiento,mes_nacimiento,ano_nacimiento,sexo_cliente,edad_cliente,estrato_cliente,estado_civil,personas_cargo,ingresos,egresos,ciudad,direccion,numero_celular,email)";
-            sentenciaSQL = sentenciaSQL + " VALUES ("+ objCreditoSolicitud.numsolc +","+ objCreditoSolicitud.diasolicitud +"," + objCreditoSolicitud.messolicitud+"," + objCreditoSolicitud.añosolicitud+ ", " + objCreditoSolicitud.codigogarantia + ", '" + objCreditoSolicitud.nombrec+ "', " + objCreditoSolicitud.cedulac+ "," + objCreditoSolicitud.dianacimiento+ ", " + objCreditoSolicitud.mesnacimiento+", " + objCreditoSolicitud.añonacimiento + " , '" + objCreditoSolicitud.sexoc + "', "+ objCreditoSolicitud.edadc+", "+ objCreditoSolicitud.estratoc +",'"+objCreditoSolicitud.estadocivil+"', "+objCreditoSolicitud.personascargo+", "+objCreditoSolicitud.ingresos+", "+objCreditoSolicitud.egresos+", '"+objCreditoSolicitud.ciudadc+"','"+objCreditoSolicitud.direccionc+"', "+objCreditoSolicitud.celularc+", '"+objCreditoSolicitud.emailc+"')";
+            sentenciaSQL = "INSERT INTO solicitud_inversion";
+            sentenciaSQL = sentenciaSQL + " VALUES ("+ objCreditoSolicitud.numsolc +","+ objCreditoSolicitud.diasolicitud +"," + objCreditoSolicitud.messolicitud+"," + objCreditoSolicitud.añosolicitud+",'" + objCreditoSolicitud.nombrec+ "', " + objCreditoSolicitud.cedulac+ "," + objCreditoSolicitud.dianacimiento+ ", " + objCreditoSolicitud.mesnacimiento+", " + objCreditoSolicitud.añonacimiento + " , '" + objCreditoSolicitud.sexoc + "', "+ objCreditoSolicitud.edadc+", "+objCreditoSolicitud.inversion+", "+objCreditoSolicitud.tim_iv+", '"+objCreditoSolicitud.ciudadc+"','"+objCreditoSolicitud.direccionc+"', "+objCreditoSolicitud.celularc+", '"+objCreditoSolicitud.emailc+"')";
             sentencia.execute(sentenciaSQL);
             JOptionPane.showMessageDialog(this, "Guardado Correctamente");
         } catch (SQLException ex) {
@@ -756,30 +756,26 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        conectarBD_creditos();
         try {
-            List<CreditoSolicitud> lista = new ArrayList<>();
-            CreditoSolicitud objCreditoSolicitud;
+            List<InversionSolicitud> lista = new ArrayList<>();
+            InversionSolicitud objCreditoSolicitud;
             //    Long id = 0l;
             while (resultado.next()) {
                 
-                objCreditoSolicitud = new CreditoSolicitud();
+                objCreditoSolicitud = new InversionSolicitud();
                 
-                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_solicitud"));
+                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_sol"));
                 objCreditoSolicitud.setDiasolicitud(resultado.getInt("dia_solicitud"));
-                objCreditoSolicitud.setMesolicitud(resultado.getInt("mes_solicitud"));
+                objCreditoSolicitud.setMessolicitud(resultado.getInt("mes_solicitud"));
                 objCreditoSolicitud.setAñosolicitud(resultado.getInt("ano_solicitud"));
-                objCreditoSolicitud.setCodigogarantia(resultado.getInt("codigo_garantia"));
                 objCreditoSolicitud.setNombrec(resultado.getString("nombre_cliente"));
-                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificación"));
+                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificacion"));
                 objCreditoSolicitud.setDianacimiento(resultado.getInt("dia_nacimiento"));
                 objCreditoSolicitud.setMesnacimiento(resultado.getInt("mes_nacimiento"));
                 objCreditoSolicitud.setAñonacimiento(resultado.getInt("ano_nacimiento"));
                 objCreditoSolicitud.setSexoc(resultado.getString("sexo_cliente"));
                 objCreditoSolicitud.setEdadc(resultado.getInt("edad_cliente"));
-                objCreditoSolicitud.setEstratoc(resultado.getInt("estrato_cliente"));
-                objCreditoSolicitud.setEstadocivil(resultado.getString("estado_civil"));
-                objCreditoSolicitud.setPersonascargo(resultado.getInt("personas_cargo"));
-                objCreditoSolicitud.setIngresos(resultado.getInt("ingresos"));
-                objCreditoSolicitud.setEgresos(resultado.getInt("egresos"));
+                objCreditoSolicitud.setInversion(resultado.getInt("dinero_invertir"));
+                objCreditoSolicitud.setTim_iv(resultado.getInt("tiem_inv"));
                 objCreditoSolicitud.setCiudadc(resultado.getString("ciudad"));
                 objCreditoSolicitud.setDireccionc(resultado.getString("direccion"));
                 objCreditoSolicitud.setCelularc(resultado.getInt("numero_celular"));

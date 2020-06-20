@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     
-    static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
     static Connection conexion = null;
     static Statement sentencia = null;
     static ResultSet resultado = null;
@@ -50,11 +50,8 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         modelo.addColumn("Año Nacimiento");
         modelo.addColumn("Sexo");
         modelo.addColumn("Edad");
-        modelo.addColumn("Estrato");
-        modelo.addColumn("Estado Civil");
-        modelo.addColumn("Personas a Cargo");
-        modelo.addColumn("Ingresos");
-        modelo.addColumn("Egresos") ;
+        modelo.addColumn("Inversion");
+        modelo.addColumn("Timpo de Inversion") ;
         modelo.addColumn("Ciudad") ;
         modelo.addColumn("Dirección");
         modelo.addColumn("Celular");

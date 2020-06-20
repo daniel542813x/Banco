@@ -20,7 +20,9 @@ public class InversionSolicitud {
     String direccionc;
     int celularc;
     String emailc;
-
+    public InversionSolicitud(){
+        
+    }
     public InversionSolicitud(int numsolc, int diasolicitud, int messolicitud, int añosolicitud, String nombrec, int cedulac, int dianacimiento, int mesnacimiento, int añonacimiento, int edadc, String sexoc, int inversion, int tim_iv, String ciudadc, String direccionc, int celularc, String emailc) {
         this.numsolc = numsolc;
         this.diasolicitud = diasolicitud;

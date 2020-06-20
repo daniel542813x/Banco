@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class RegistroSolicitud extends javax.swing.JInternalFrame {
     
-    static String cadenaConexion = "jdbc:postgresql://localhost:5432/sprint1AcorSystem?";
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
     static Connection conexion = null;
     static Statement sentencia = null;
     static ResultSet resultado = null;
