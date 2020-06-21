@@ -23,8 +23,8 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     static Statement sentencia = null;
     static ResultSet resultado = null;
     static String cadenaDriver = "org.postgresql.Driver";
-    static String consultaSQL = "SELECT * FROM solicitud_creditos";
-    static CreditoSolicitud objCreditoSolicitud;
+    static String consultaSQL = "SELECT * FROM solicitud_inversion";
+    static InversionSolicitud objCreditoSolicitud;
 
     DefaultTableModel modelo;
     
@@ -42,7 +42,6 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         modelo.addColumn("Día Solicitud");
         modelo.addColumn("Mes Solicitud");
         modelo.addColumn("Año Solicitud");
-        modelo.addColumn("Codigo Garantia");
         modelo.addColumn("Nombre");
         modelo.addColumn("Identificación");
         modelo.addColumn("Día nacimiento");
@@ -56,11 +55,13 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         modelo.addColumn("Dirección");
         modelo.addColumn("Celular");
         modelo.addColumn("Email") ;
+        modelo.addColumn("Estado") ;
+
         
         this.jTable1.setModel(modelo);
         
          
-         SolicitudCredito ventana = new SolicitudCredito();
+         SolicitudInversion ventana = new SolicitudInversion();
          
          this.getContentPane().setBackground(java.awt.Color.WHITE);
          
@@ -77,7 +78,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     static public void conectarBD_creditos() {
         try {
             Class.forName(cadenaDriver);
-            conexion = DriverManager.getConnection(cadenaConexion, "postgres", "12345");
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
             sentencia = conexion.createStatement();
 
             resultado = sentencia.executeQuery(consultaSQL);
@@ -140,8 +141,6 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -156,19 +155,21 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         jTextField14 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jTextField23 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jTextField19 = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jTextField20 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -215,6 +216,12 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Edad:");
 
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
         jLabel10.setText("Fecha de Nacimiento:");
 
         jLabel11.setText("Año:");
@@ -224,8 +231,6 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         jLabel20.setText("Día:");
 
         jLabel21.setText("Mes:");
-
-        jLabel22.setText("Estado Civil:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -244,36 +249,29 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField16)
-                                .addGap(135, 135, 135))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,31 +282,26 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel10)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel20)
-                        .addComponent(jLabel21)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE))
+                    .addComponent(jLabel12)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
@@ -345,6 +338,8 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel4.setText("Tempo");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -380,8 +375,13 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +393,9 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
@@ -459,6 +461,12 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
 
         jLabel27.setText("Email:");
 
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -469,7 +477,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -498,9 +506,9 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
@@ -523,10 +531,10 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -584,63 +592,58 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         }
         conectarBD_creditos();
         try {
-            List<CreditoSolicitud> lista = new ArrayList<>();
-            CreditoSolicitud objCreditoSolicitud;
+            List<InversionSolicitud> lista = new ArrayList<>();
+            InversionSolicitud objCreditoSolicitud;
             //    Long id = 0l;
             while (resultado.next()) {
                 
-                objCreditoSolicitud = new CreditoSolicitud();
+                objCreditoSolicitud = new InversionSolicitud();
                 
-                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_solicitud"));
+                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_sol"));
                 objCreditoSolicitud.setDiasolicitud(resultado.getInt("dia_solicitud"));
-                objCreditoSolicitud.setMesolicitud(resultado.getInt("mes_solicitud"));
+                objCreditoSolicitud.setMessolicitud(resultado.getInt("mes_solicitud"));
                 objCreditoSolicitud.setAñosolicitud(resultado.getInt("ano_solicitud"));
-                objCreditoSolicitud.setCodigogarantia(resultado.getInt("codigo_garantia"));
                 objCreditoSolicitud.setNombrec(resultado.getString("nombre_cliente"));
-                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificación"));
+                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificacion"));
                 objCreditoSolicitud.setDianacimiento(resultado.getInt("dia_nacimiento"));
                 objCreditoSolicitud.setMesnacimiento(resultado.getInt("mes_nacimiento"));
                 objCreditoSolicitud.setAñonacimiento(resultado.getInt("ano_nacimiento"));
                 objCreditoSolicitud.setSexoc(resultado.getString("sexo_cliente"));
                 objCreditoSolicitud.setEdadc(resultado.getInt("edad_cliente"));
-                objCreditoSolicitud.setEstratoc(resultado.getInt("estrato_cliente"));
-                objCreditoSolicitud.setEstadocivil(resultado.getString("estado_civil"));
-                objCreditoSolicitud.setPersonascargo(resultado.getInt("personas_cargo"));
-                objCreditoSolicitud.setIngresos(resultado.getInt("ingresos"));
-                objCreditoSolicitud.setEgresos(resultado.getInt("egresos"));
+                objCreditoSolicitud.setInversion(resultado.getInt("dinero_invertir"));
+                objCreditoSolicitud.setTim_iv(resultado.getInt("tiem_inv"));
                 objCreditoSolicitud.setCiudadc(resultado.getString("ciudad"));
                 objCreditoSolicitud.setDireccionc(resultado.getString("direccion"));
                 objCreditoSolicitud.setCelularc(resultado.getInt("numero_celular"));
                 objCreditoSolicitud.setEmailc(resultado.getString("email"));
-                
+                objCreditoSolicitud.setEstado(resultado.getString("estado"));
+
                 lista.add(objCreditoSolicitud);
             }
             String[] datos;
 
-            for (CreditoSolicitud elem : lista) {
-                datos = new String[21];
+            for (InversionSolicitud elem : lista) {
+                datos = new String[18];
                 
                 datos[0] = Integer.toString(elem.numsolc);
                 datos[1]= Integer.toString(elem.diasolicitud);
                 datos[2]= Integer.toString(elem.messolicitud);
                 datos[3]= Integer.toString(elem.añosolicitud);
-                datos[4] = Integer.toString(elem.codigogarantia);
-                datos[5] = elem.nombrec;
-                datos[6] = Integer.toString(elem.cedulac);
-                datos[7]= Integer.toString(elem.dianacimiento);
-                datos[8]= Integer.toString(elem.mesnacimiento);
-                datos[9]= Integer.toString(elem.añonacimiento);
-                datos[10] = elem.sexoc;
-                datos[11] = Integer.toString(elem.edadc);
-                datos[12] = Integer.toString(elem.estratoc);
-                datos[13] = elem.estadocivil;
-                datos[14] = Integer.toString(elem.personascargo);
-                datos[15] = Integer.toString(elem.ingresos);
-                datos[16] = Integer.toString(elem.egresos);
-                datos[17] = elem.ciudadc;
-                datos[18] = elem.direccionc;
-                datos[19] = Integer.toString(elem.celularc);
-                datos[20] = elem.emailc;
+                datos[4] = elem.nombrec;
+                datos[5] = Integer.toString(elem.cedulac);
+                datos[6]= Integer.toString(elem.dianacimiento);
+                datos[7]= Integer.toString(elem.mesnacimiento);
+                datos[8]= Integer.toString(elem.añonacimiento);
+                datos[9] = elem.sexoc;
+                datos[10] = Integer.toString(elem.edadc);
+                datos[11] = Integer.toString(elem.inversion);
+                datos[12] = Integer.toString(elem.tim_iv);
+                datos[13] = elem.getCiudadc();
+                datos[14] = elem.direccionc;
+                datos[15] = Integer.toString(elem.celularc);
+                datos[16] = elem.emailc;
+                datos[17] = elem.estado;
+
                 
                 modelo.addRow(datos);
             }
@@ -658,18 +661,19 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         jTextField12.setText(String.valueOf(jTable1.getValueAt(seleccionar, 1)));
         jTextField13.setText(String.valueOf(jTable1.getValueAt(seleccionar, 2)));
         jTextField14.setText(String.valueOf(jTable1.getValueAt(seleccionar, 3)));
-        jTextField3.setText(String.valueOf(jTable1.getValueAt(seleccionar, 5)));
-        jTextField4.setText(String.valueOf(jTable1.getValueAt(seleccionar, 6)));
+        jTextField3.setText(String.valueOf(jTable1.getValueAt(seleccionar, 4)));
+        jTextField4.setText(String.valueOf(jTable1.getValueAt(seleccionar, 5)));
         jTextField8.setText(String.valueOf(jTable1.getValueAt(seleccionar, 7)));
-        jTextField15.setText(String.valueOf(jTable1.getValueAt(seleccionar, 8)));
-        jTextField9.setText(String.valueOf(jTable1.getValueAt(seleccionar,9)));
-        jTextField10.setText(String.valueOf(jTable1.getValueAt(seleccionar, 10)));
-        jTextField5.setText(String.valueOf(jTable1.getValueAt(seleccionar, 11)));
-        jTextField16.setText(String.valueOf(jTable1.getValueAt(seleccionar, 13)));
-        jTextField17.setText(String.valueOf(jTable1.getValueAt(seleccionar, 17)));
-        jTextField19.setText(String.valueOf(jTable1.getValueAt(seleccionar, 18)));
-        jTextField18.setText(String.valueOf(jTable1.getValueAt(seleccionar, 19)));
-        jTextField20.setText(String.valueOf(jTable1.getValueAt(seleccionar,20)));
+        jTextField15.setText(String.valueOf(jTable1.getValueAt(seleccionar, 6)));
+        jTextField10.setText(String.valueOf(jTable1.getValueAt(seleccionar,9)));
+        jTextField9.setText(String.valueOf(jTable1.getValueAt(seleccionar, 8)));
+        jTextField2.setText(String.valueOf(jTable1.getValueAt(seleccionar,12)));
+        jTextField5.setText(String.valueOf(jTable1.getValueAt(seleccionar, 10)));
+        jTextField23.setText(String.valueOf(jTable1.getValueAt(seleccionar, 11)));
+        jTextField6.setText(String.valueOf(jTable1.getValueAt(seleccionar, 13)));
+        jTextField18.setText(String.valueOf(jTable1.getValueAt(seleccionar, 14)));
+        jTextField19.setText(String.valueOf(jTable1.getValueAt(seleccionar, 15)));
+        jTextField20.setText(String.valueOf(jTable1.getValueAt(seleccionar,16)));
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -706,6 +710,14 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23ActionPerformed
 
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
     
 //    public static void main(String args[]) {
 //        
@@ -733,7 +745,6 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -742,6 +753,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -757,15 +769,15 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables

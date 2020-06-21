@@ -59,7 +59,8 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         modelo.addColumn("Dirección");
         modelo.addColumn("Celular");
         modelo.addColumn("Email") ;
-        
+        modelo.addColumn("Estado") ;
+
         this.jTable1.setModel(modelo);
         
          
@@ -187,6 +188,8 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/credito_compra_cartera (1).png"))); // NOI18N
@@ -576,16 +579,9 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -596,7 +592,14 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1)
                                 .addGap(96, 96, 96)))
                         .addComponent(jLabel30)
-                        .addGap(9, 9, 9)))
+                        .addGap(9, 9, 9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -616,13 +619,13 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                         .addGap(26, 26, 26)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -647,13 +650,13 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                 
                 objCreditoSolicitud = new CreditoSolicitud();
                 
-                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_solicitud"));
+                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_sol"));
                 objCreditoSolicitud.setDiasolicitud(resultado.getInt("dia_solicitud"));
                 objCreditoSolicitud.setMesolicitud(resultado.getInt("mes_solicitud"));
                 objCreditoSolicitud.setAñosolicitud(resultado.getInt("ano_solicitud"));
                 objCreditoSolicitud.setCodigogarantia(resultado.getInt("codigo_garantia"));
                 objCreditoSolicitud.setNombrec(resultado.getString("nombre_cliente"));
-                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificación"));
+                objCreditoSolicitud.setCedulac(resultado.getInt("numero_identificacion"));
                 objCreditoSolicitud.setDianacimiento(resultado.getInt("dia_nacimiento"));
                 objCreditoSolicitud.setMesnacimiento(resultado.getInt("mes_nacimiento"));
                 objCreditoSolicitud.setAñonacimiento(resultado.getInt("ano_nacimiento"));
@@ -668,13 +671,15 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                 objCreditoSolicitud.setDireccionc(resultado.getString("direccion"));
                 objCreditoSolicitud.setCelularc(resultado.getInt("numero_celular"));
                 objCreditoSolicitud.setEmailc(resultado.getString("email"));
+                objCreditoSolicitud.setEstado(resultado.getString("estado"));
+
                 
                 lista.add(objCreditoSolicitud);
             }
             String[] datos;
 
             for (CreditoSolicitud elem : lista) {
-                datos = new String[21];
+                datos = new String[22];
                 
                 datos[0] = Integer.toString(elem.numsolc);
                 datos[1]= Integer.toString(elem.diasolicitud);
@@ -697,6 +702,8 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
                 datos[18] = elem.direccionc;
                 datos[19] = Integer.toString(elem.celularc);
                 datos[20] = elem.emailc;
+                datos[21] = elem.estado;
+
                 
                 modelo.addRow(datos);
             }

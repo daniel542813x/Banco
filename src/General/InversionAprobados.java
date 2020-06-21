@@ -1,45 +1,21 @@
 
 package General;
 
-import static General.SolicitudCredito.cadenaConexion;
-import static General.SolicitudCredito.cadenaDriver;
-import static General.SolicitudCredito.conexion;
-import static General.SolicitudCredito.consultaSQL;
-import static General.SolicitudCredito.resultado;
-import static General.SolicitudCredito.sentencia;
 import java.awt.Font;
-import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 
-public class CreditosAprobados extends javax.swing.JInternalFrame {
+public class InversionAprobados extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
-    static Connection conexion = null;
-    static Statement sentencia = null;
-    static ResultSet resultado = null;
-    static String cadenaDriver = "org.postgresql.Driver";
-    static String consultaSQL;
     
-    public CreditosAprobados() {
+    public InversionAprobados() {
         initComponents();
         RegistroSolicitud ventana = new RegistroSolicitud();
-        try {
-            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
-            Class.forName(cadenaDriver);
-
-        } catch (Exception e) {
-        }
-
+        
         jTextField2.setText(ventana.texto1);
         jTextField3.setText(ventana.texto2);
         jTextField4.setText(ventana.texto3);
@@ -52,14 +28,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         modelo.addColumn("Fecha ");
         
         this.jTable1.setModel(modelo);
-        
-        Calendar calendario =new GregorianCalendar();
-	int año=calendario.get(Calendar.YEAR);
-	int mes=calendario.get(Calendar.MONTH);
-        int dia=calendario.get(Calendar.DAY_OF_MONTH);
-        jTextField7.setText(""+año);
-        jTextField6.setText(""+mes);
-        jTextField5.setText(""+dia);
         
         
         jLabel1.setFont(new Font("BahnSchrift SemiBold", Font.BOLD, 18));
@@ -117,8 +85,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -143,19 +109,14 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/ultima056.png"))); // NOI18N
-        jLabel1.setText("CREDITOS");
+        jLabel1.setText("Inversiones");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 153, 0), 3));
 
         jLabel2.setText("Información del Cliente");
 
-        jLabel3.setText("Número del Prestamo");
+        jLabel3.setText("Número del Inversion");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField1KeyTyped(evt);
@@ -163,20 +124,12 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         });
 
         jButton1.setText("Nuevo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Nombres y Apellidos");
 
         jLabel5.setText("Número de Identidad");
 
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField3KeyPressed(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField3KeyTyped(evt);
             }
@@ -259,7 +212,7 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 153, 0), 3));
 
-        jLabel7.setText("Información del Prestamo");
+        jLabel7.setText("Información del Inversion");
 
         jLabel8.setText("Fecha del Credito:");
 
@@ -287,7 +240,7 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel12.setText("Intervalo de Días:");
+        jLabel12.setText("Frecuencia de pago");
 
         jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -295,11 +248,9 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel13.setText("Número de Cuotas:");
+        jLabel13.setText("Número de meses");
 
-        jLabel14.setText("Monto del Prestamo:");
-
-        jLabel15.setText("Tiempo de Prestamo");
+        jLabel14.setText("Monto del Inversion:");
 
         jLabel16.setText("Tasa de Interes");
 
@@ -314,7 +265,7 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
         jLabel18.setText("Intereses");
 
-        jLabel19.setText("Cuota Mensual");
+        jLabel19.setText("Valor de la cuota ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -353,17 +304,10 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                         .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel15)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(43, 43, 43)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel16)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(5, 5, 5)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2))))
+                            .addComponent(jTextField12)
+                            .addGap(22, 22, 22)
+                            .addComponent(jButton2)
+                            .addGap(127, 127, 127))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel18)
@@ -371,7 +315,8 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                             .addGap(38, 38, 38)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel19)))))
+                                .addComponent(jLabel19))))
+                    .addComponent(jLabel16))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -395,21 +340,17 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel14)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2))))
+                .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jLabel18)
@@ -487,7 +428,7 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)))
-                .addGap(0, 4, Short.MAX_VALUE))
+                .addGap(0, 278, Short.MAX_VALUE))
         );
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
@@ -500,9 +441,9 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                 .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                         .addGap(404, 404, 404)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -534,9 +475,9 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         double montoPrestamo, tiempo, tasa, montoPagar, intereses, cuotas, mensualidad ;
         
         montoPrestamo=Double.parseDouble(jTextField10.getText());
-        tiempo=Double.parseDouble(jTextField11.getText());
+        tiempo=Double.parseDouble(jTextField9.getText());
         tasa=Double.parseDouble(jTextField12.getText());
-        cuotas=Double.parseDouble(jTextField9.getText());
+        cuotas=Double.parseDouble(jTextField9.getText())/Double.parseDouble(jTextField8.getText());
         
         montoPagar=Math.pow(1+tasa, tiempo)*montoPrestamo;
         intereses=montoPagar-montoPrestamo;
@@ -546,20 +487,8 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         jTextField13.setText(Double.toString(montoPagar));
         jTextField14.setText(Double.toString(intereses));
         jTextField15.setText(Double.toString(mensualidad));
-
-
-        addDB();
     }//GEN-LAST:event_jButton2ActionPerformed
-    private void addDB(){
-         try {
-            consultaSQL="insert into creditos values('"+jTextField1.getText()+"','"+jTextField3.getText()+"','"+jTextField5.getText()+"','"+jTextField6.getText()+"','"+jTextField7.getText()+"','"
-            +jTextField8.getText()+"','"+jTextField9.getText()+"','"+jTextField10.getText()+"','"+jTextField11.getText()+"','"+jTextField12.getText()+"','"+jTextField13.getText()+"','"+jTextField14.getText()+"','"+jTextField15.getText()+"');";
-            sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery(consultaSQL);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Calendar c=GregorianCalendar.getInstance();
         
@@ -611,7 +540,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         texto9=jTextField8.getText();
         texto10=jTextField9.getText();
         texto11=jTextField10.getText();
-        texto12=jTextField11.getText();
         texto13=jTextField12.getText();
         texto14=jTextField13.getText();
         texto15=jTextField14.getText();
@@ -668,55 +596,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         if(c<'0'|| c>'9' ) evt.consume();
     }//GEN-LAST:event_jTextField8KeyTyped
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try {
-            consultaSQL="select count(*) as total from creditos;";
-            sentencia = conexion.createStatement();
-            int n=0;
-            resultado = sentencia.executeQuery(consultaSQL);
-            if(resultado.next()) {
-                n= Integer.parseInt(resultado.getString("total"));
-            }else{
-                n=0;
-            }
-            jTextField1.setText(""+(n+1));
-         } catch (Exception e) {
-            e.printStackTrace();
-        }        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
-        if(evt.getKeyChar()==KeyEvent.VK_ENTER || evt.getKeyChar()==KeyEvent.VK_TAB){
-         try {
-            consultaSQL="select * from creditos join  solicitud_creditos using (numero_identificacion) where numero_identificacion='"+jTextField3.getText()+"';";
-            sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery(consultaSQL);
-            if(resultado.next()) {
-                jTextField4.setText(resultado.getString("numero_celular"));
-                jTextField16.setText(resultado.getString("ciudad"));
-                jTextField7.setText(resultado.getString("ano_ini"));
-                jTextField6.setText(resultado.getString("mes_ini"));
-                jTextField5.setText(resultado.getString("dia_ini"));
-                jTextField8.setText(resultado.getString("itervalo"));
-                jTextField9.setText(resultado.getString("num_cuo"));
-                jTextField10.setText(resultado.getString("monto_pre"));
-                jTextField11.setText(resultado.getString("tiem_pres"));
-                jTextField12.setText(resultado.getString("tasa_i"));
-                jTextField13.setText(resultado.getString("monto"));
-                jTextField14.setText(resultado.getString("intereses"));
-                jTextField15.setText(resultado.getString("mensualidad"));
-
-                              
-            }
-         } catch (Exception e) {
-            e.printStackTrace();
-        }         }
-    }//GEN-LAST:event_jTextField3KeyPressed
-
     
 //    public static void main(String args[]) {
 //        
@@ -761,7 +640,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -784,7 +662,6 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;

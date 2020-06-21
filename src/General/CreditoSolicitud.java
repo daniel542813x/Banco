@@ -25,6 +25,7 @@ public class CreditoSolicitud {
     String direccionc;
     int celularc;
     String emailc;
+    String estado;
     
     
      public CreditoSolicitud() {
@@ -34,7 +35,7 @@ public class CreditoSolicitud {
             int estratoc , String ciudadc, String direccionc, int celularc, String emailc, 
             int numsolc, String fechasc, int diasolicitud, int messolicitud, int añosolicitud, 
             int codigogarantia, int dianacimiento,int mesnacimiento,int añonacimiento, String estadocivil, 
-            int personascargo,int ingresos,int egresos ) {
+            int personascargo,int ingresos,int egresos,String estado ) {
         
         this.nombrec = nombrec;
         this.cedulac = cedulac;
@@ -57,6 +58,8 @@ public class CreditoSolicitud {
         this.personascargo=personascargo;
         this.ingresos=ingresos;
         this.egresos=egresos;
+        this.estado=estado;
+
         
     }
     
@@ -206,6 +209,9 @@ public class CreditoSolicitud {
     }
     public void setEgresos(int egresos) {
         this.egresos= egresos;
+    }
+    public void setEstado(String estado) {
+        this.estado= estado;
     }
     
     

@@ -20,10 +20,11 @@ public class InversionSolicitud {
     String direccionc;
     int celularc;
     String emailc;
+    String estado;
     public InversionSolicitud(){
         
     }
-    public InversionSolicitud(int numsolc, int diasolicitud, int messolicitud, int añosolicitud, String nombrec, int cedulac, int dianacimiento, int mesnacimiento, int añonacimiento, int edadc, String sexoc, int inversion, int tim_iv, String ciudadc, String direccionc, int celularc, String emailc) {
+    public InversionSolicitud(String estado,int numsolc, int diasolicitud, int messolicitud, int añosolicitud, String nombrec, int cedulac, int dianacimiento, int mesnacimiento, int añonacimiento, int edadc, String sexoc, int inversion, int tim_iv, String ciudadc, String direccionc, int celularc, String emailc) {
         this.numsolc = numsolc;
         this.diasolicitud = diasolicitud;
         this.messolicitud = messolicitud;
@@ -41,6 +42,7 @@ public class InversionSolicitud {
         this.direccionc = direccionc;
         this.celularc = celularc;
         this.emailc = emailc;
+        this.estado=estado;
     }
 
     public void setNumsolc(int numsolc) {
@@ -178,6 +180,8 @@ public class InversionSolicitud {
     public String getEmailc() {
         return emailc;
     }
-    
+    public void setEstado(String estado) {
+        this.estado=estado;
+    }
 
 }
