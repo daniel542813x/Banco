@@ -963,7 +963,7 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
                 
                 objCreditoSolicitud = new CreditoSolicitud();
                 
-                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_solicitud"));
+                objCreditoSolicitud.setNumsolc(resultado.getInt("numero_sol"));
                 objCreditoSolicitud.setDiasolicitud(resultado.getInt("dia_solicitud"));
                 objCreditoSolicitud.setMesolicitud(resultado.getInt("mes_solicitud"));
                 objCreditoSolicitud.setAñosolicitud(resultado.getInt("ano_solicitud"));

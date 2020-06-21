@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -173,6 +174,11 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Número de Identidad");
 
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField3KeyPressed(evt);
@@ -712,10 +718,18 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
                               
             }
+            if(jTextField4.getText().isEmpty() || jTextField4.getText()==""){
+                    JOptionPane.showMessageDialog(this, "Error, esta solicitud no ha sido aprobada");
+                    jButton2.disable();
+                }
          } catch (Exception e) {
             e.printStackTrace();
         }         }
     }//GEN-LAST:event_jTextField3KeyPressed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     
 //    public static void main(String args[]) {

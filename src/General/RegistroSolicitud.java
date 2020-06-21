@@ -34,8 +34,14 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground(java.awt.Color.white);
         
         conectarBD_creditos();
-        
-        
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
+            Class.forName(cadenaDriver);
+
+        } catch (Exception e) {
+        }
+           
+
         
         modelo = new DefaultTableModel();
         modelo.addColumn("Numero Solicitud");
@@ -80,10 +86,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
     
     static public void conectarBD_creditos() {
         try {
-            Class.forName(cadenaDriver);
-            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
             sentencia = conexion.createStatement();
-
             resultado = sentencia.executeQuery(consultaSQL);
         } catch (Exception e) {
             e.printStackTrace();
@@ -749,7 +752,13 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        try {
+            sentencia = conexion.createStatement();
+
+            resultado = sentencia.executeQuery("update solicitud_creditos set estado='Aprobado' where numero_identificacion='"+jTextField4.getText()+"';");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
         
         texto1=jTextField3.getText();
@@ -760,6 +769,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         CreditosAprobados ventana = new CreditosAprobados();
         ventana.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

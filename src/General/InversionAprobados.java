@@ -1,26 +1,56 @@
 
 package General;
 
+import static General.CreditosAprobados.cadenaConexion;
+import static General.CreditosAprobados.cadenaDriver;
+import static General.CreditosAprobados.conexion;
+import static General.CreditosAprobados.consultaSQL;
+import static General.CreditosAprobados.resultado;
+import static General.CreditosAprobados.sentencia;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
 public class InversionAprobados extends javax.swing.JInternalFrame {
 
     DefaultTableModel modelo;
-    
+    static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
+    static Connection conexion = null;
+    static Statement sentencia = null;
+    static ResultSet resultado = null;
+    static String cadenaDriver = "org.postgresql.Driver";
+    static String consultaSQL;
     public InversionAprobados() {
         initComponents();
         RegistroSolicitud ventana = new RegistroSolicitud();
-        
+        try {
+            conexion = DriverManager.getConnection(cadenaConexion, "estevan", "");
+            Class.forName(cadenaDriver);
+
+        } catch (Exception e) {
+        }
         jTextField2.setText(ventana.texto1);
         jTextField3.setText(ventana.texto2);
         jTextField4.setText(ventana.texto3);
         jTextField16.setText(ventana.texto4);
         
+        
+        Calendar calendario =new GregorianCalendar();
+	int año=calendario.get(Calendar.YEAR);
+	int mes=calendario.get(Calendar.MONTH);
+        int dia=calendario.get(Calendar.DAY_OF_MONTH);
+        jTextField7.setText(""+año);
+        jTextField6.setText(""+mes);
+        jTextField5.setText(""+dia);
         this.getContentPane().setBackground(java.awt.Color.WHITE);
         
         modelo = new DefaultTableModel();
@@ -124,12 +154,20 @@ public class InversionAprobados extends javax.swing.JInternalFrame {
         });
 
         jButton1.setText("Nuevo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Nombres y Apellidos");
 
         jLabel5.setText("Número de Identidad");
 
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField3KeyTyped(evt);
             }
@@ -487,8 +525,18 @@ public class InversionAprobados extends javax.swing.JInternalFrame {
         jTextField13.setText(Double.toString(montoPagar));
         jTextField14.setText(Double.toString(intereses));
         jTextField15.setText(Double.toString(mensualidad));
+        addDB();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    private void addDB(){
+         try {
+            consultaSQL="insert into inversiones values('"+jTextField1.getText()+"','"+jTextField3.getText()+"','"+jTextField5.getText()+"','"+jTextField6.getText()+"','"+jTextField7.getText()+"','"
+            +jTextField8.getText()+"','"+jTextField9.getText()+"','"+jTextField10.getText()+"','"+jTextField12.getText()+"','"+jTextField13.getText()+"','"+jTextField14.getText()+"','"+jTextField15.getText()+"');";
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(consultaSQL);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Calendar c=GregorianCalendar.getInstance();
         
@@ -596,6 +644,61 @@ public class InversionAprobados extends javax.swing.JInternalFrame {
         if(c<'0'|| c>'9' ) evt.consume();
     }//GEN-LAST:event_jTextField8KeyTyped
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  try {
+            consultaSQL="select count(*) as total from inversiones;";
+            sentencia = conexion.createStatement();
+            int n=0;
+            resultado = sentencia.executeQuery(consultaSQL);
+            if(resultado.next()) {
+                n= Integer.parseInt(resultado.getString("total"));
+            }else{
+                n=0;
+            }
+            jTextField1.setText(""+(n+1));
+         } catch (Exception e) {
+            e.printStackTrace();
+        }                // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        String estado=null;
+
+        try {
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery("select estado from  solicitud_inversion where   numero_identificacion='"+jTextField3.getText()+"';");
+            while(resultado.next()){
+                estado=resultado.getString("estado");
+            }
+        } catch (Exception e) {
+        }
+        
+        if((evt.getKeyChar()==KeyEvent.VK_ENTER || evt.getKeyChar()==KeyEvent.VK_TAB) ){
+         try {
+            consultaSQL="select * from inversiones join  solicitud_inversion using (numero_identificacion) where numero_identificacion='"+jTextField3.getText()+"';";
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(consultaSQL);
+            if(resultado.next() && estado.contains("Aprobado")) {
+                jTextField4.setText(resultado.getString("numero_celular"));
+                jTextField16.setText(resultado.getString("direccion"));
+                jTextField7.setText(resultado.getString("ano_ini"));
+                jTextField6.setText(resultado.getString("mes_ini"));
+                jTextField5.setText(resultado.getString("dia_ini"));
+                jTextField8.setText(resultado.getString("frecuencia"));
+                jTextField9.setText(resultado.getString("num_meses"));
+                jTextField10.setText(resultado.getString("monto_inv"));
+                jTextField12.setText(resultado.getString("tasa_i"));
+                jTextField13.setText(resultado.getString("monto"));
+                jTextField14.setText(resultado.getString("intereses"));
+                jTextField15.setText(resultado.getString("cuota"));
+
+                             
+            }
+            
+         } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error, esta solicitud no ha sido aprobada");        }
+    }//GEN-LAST:event_jTextField3KeyPressed
+    }
     
 //    public static void main(String args[]) {
 //        

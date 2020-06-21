@@ -2,6 +2,9 @@
 package General;
 
 
+import static General.RegistroSolicitud.conexion;
+import static General.RegistroSolicitud.resultado;
+import static General.RegistroSolicitud.sentencia;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -685,7 +688,13 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        try {
+            sentencia = conexion.createStatement();
+
+            resultado = sentencia.executeQuery("update solicitud_inversion set estado='Aprobado' where numero_identificacion='"+jTextField4.getText()+"';");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }        
         JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
         
         texto1=jTextField3.getText();
