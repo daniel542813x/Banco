@@ -25,7 +25,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
     static String cadenaDriver = "org.postgresql.Driver";
     static String consultaSQL = "SELECT * FROM solicitud_creditos";
     static CreditoSolicitud objCreditoSolicitud;
-
+    int seleccionar=-1;
     DefaultTableModel modelo;
     
     public RegistroSolicitud() {
@@ -719,7 +719,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         
-        int seleccionar=jTable1.rowAtPoint(evt.getPoint());
+        seleccionar=jTable1.rowAtPoint(evt.getPoint());
         jTextField1.setText(String.valueOf(jTable1.getValueAt(seleccionar, 0)));
         jTextField12.setText(String.valueOf(jTable1.getValueAt(seleccionar, 1)));
         jTextField13.setText(String.valueOf(jTable1.getValueAt(seleccionar, 2)));
@@ -745,30 +745,44 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        JOptionPane.showMessageDialog(this, "Solicitud Rechazada");
-        
+        try {
+            sentencia = conexion.createStatement();
+
+            if(seleccionar!=-1){
+                resultado = sentencia.executeQuery("update solicitud_creditos set estado='Rechazado' where numero_identificacion='"+jTextField4.getText()+"';");
+            }else{
+                JOptionPane.showMessageDialog(this, "Debe seleccionar una solicitud");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            if(e.getMessage().contains("No results")){
+                JOptionPane.showMessageDialog(this, "Solicitud Rechazada");
+            }
         cerrarconexion();
-        System.exit(0);
+        }   System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             sentencia = conexion.createStatement();
+            if(seleccionar!=-1){
+                resultado = sentencia.executeQuery("update solicitud_creditos set estado='Aprobado' where numero_identificacion='"+jTextField4.getText()+"';");
+            }else{
+                JOptionPane.showMessageDialog(this, "Debe seleccionar una solicitud");
 
-            resultado = sentencia.executeQuery("update solicitud_creditos set estado='Aprobado' where numero_identificacion='"+jTextField4.getText()+"';");
-        } catch (Exception e) {
+            }
+            
+        } catch (SQLException e) {
             e.printStackTrace();
+            if(e.getMessage().contains("No results")){
+                JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
+            }
+
+        }catch(NullPointerException ex){
+            JOptionPane.showMessageDialog(this, "Debe seleccionar una solicitud");
+
         }
-        JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
-        
-        texto1=jTextField3.getText();
-        texto2=jTextField4.getText();
-        texto3=jTextField18.getText();
-        texto4=jTextField19.getText();
-        
-        CreditosAprobados ventana = new CreditosAprobados();
-        ventana.setVisible(true);
-        this.setVisible(false);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
