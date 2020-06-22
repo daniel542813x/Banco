@@ -850,7 +850,15 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
             sentencia.execute(sentenciaSQL);
             JOptionPane.showMessageDialog(this, "Guardado Correctamente");
         } catch (SQLException ex) {
-            Logger.getLogger(SolicitudCredito.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if(ex.getMessage().contains("violates foreign key constraint")){
+                JOptionPane.showMessageDialog(this, "Error, el cliente no existe");
+            }
+        }catch(NumberFormatException ex){
+            if(ex.getMessage().contains("input string:")){
+                JOptionPane.showMessageDialog(this, "Error, debe llenar todos los campos");
+
+            }
         }
         jTextField1.setText("");
         jTextField2.setText("");
