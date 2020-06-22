@@ -808,7 +808,7 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        RegistroSolicitud ventana = new RegistroSolicitud();
+        SolicitudInversion ventana = new SolicitudInversion();
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed

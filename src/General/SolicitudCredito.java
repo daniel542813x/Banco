@@ -1011,8 +1011,7 @@ public class SolicitudCredito extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField9KeyTyped
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-        RegistroSolicitud ventana = new RegistroSolicitud();
+        SolicitudCredito ventana = new SolicitudCredito();
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed

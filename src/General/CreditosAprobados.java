@@ -538,23 +538,31 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         double montoPrestamo, tiempo, tasa, montoPagar, intereses, cuotas, mensualidad ;
+        try {
+            montoPrestamo=Double.parseDouble(jTextField10.getText());
+            tiempo=Double.parseDouble(jTextField11.getText());
+            tasa=Double.parseDouble(jTextField12.getText());
+            cuotas=Double.parseDouble(jTextField9.getText());
         
-        montoPrestamo=Double.parseDouble(jTextField10.getText());
-        tiempo=Double.parseDouble(jTextField11.getText());
-        tasa=Double.parseDouble(jTextField12.getText());
-        cuotas=Double.parseDouble(jTextField9.getText());
-        
-        montoPagar=Math.pow(1+tasa, tiempo)*montoPrestamo;
-        intereses=montoPagar-montoPrestamo;
-        mensualidad=montoPrestamo/cuotas*tasa;
+            montoPagar=Math.pow(1+tasa, tiempo)*montoPrestamo;
+            intereses=montoPagar-montoPrestamo;
+            mensualidad=montoPrestamo/cuotas*tasa;
         
         //salida
-        jTextField13.setText(Double.toString(montoPagar));
-        jTextField14.setText(Double.toString(intereses));
-        jTextField15.setText(Double.toString(mensualidad));
+            jTextField13.setText(Double.toString(montoPagar));
+            jTextField14.setText(Double.toString(intereses));
+            jTextField15.setText(Double.toString(mensualidad));
 
 
-        addDB();
+            addDB();
+        } catch (Exception e) {
+            if(e.getMessage().contains("empty String")){
+                JOptionPane.showMessageDialog(this, "Error, debe llenar todos los campos");
+               
+            }
+        }
+        
+
     }//GEN-LAST:event_jButton2ActionPerformed
     private void addDB(){
          try {
