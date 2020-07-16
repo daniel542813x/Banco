@@ -1,4 +1,7 @@
-
+/*
+* Hola que tal 
+como estas
+*/
 package General;
 
 import java.awt.Font;
