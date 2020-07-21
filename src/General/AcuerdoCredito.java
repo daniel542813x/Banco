@@ -3,7 +3,7 @@ package General;
 
 import java.awt.Font;
 
-
+//---------------------
 public class AcuerdoCredito extends javax.swing.JFrame {
 
     
