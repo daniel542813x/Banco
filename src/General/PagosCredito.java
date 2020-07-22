@@ -112,17 +112,17 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Id Credito", "Cuota", "Estado"
+                "Cuota", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -363,6 +363,9 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         seleccionar=jTable1.rowAtPoint(evt.getPoint());
         jLabel5.setText(String.valueOf(jTable1.getValueAt(seleccionar, 0)));
         jLabel6.setText(String.valueOf(jTable1.getValueAt(seleccionar, 1)));
+        
+        for(int i=1;)
+        this.jTable2.setModel(modelo);
 
 
         
