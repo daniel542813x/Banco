@@ -318,14 +318,16 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         
         try {
             sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery("select id,nombre_cliente,num_cuo,mensualidad from creditos join solicitud_creditos using(numero_identificacion);");
-
+            if(jTextField1.getText().isEmpty()){
+                resultado = sentencia.executeQuery("select id,nombre_cliente,num_cuo,mensualidad from creditos join solicitud_creditos using(numero_identificacion);");
+              }else{
+                resultado = sentencia.executeQuery("select id,nombre_cliente,num_cuo,mensualidad from creditos join solicitud_creditos using(numero_identificacion) where numero_identificacion='"+jTextField1.getText()+"';");        
+            }
             List<PagoCredito> lista = new ArrayList<>();
             PagoCredito objCreditoSolicitud;
             while (resultado.next()) {
-                
                 objCreditoSolicitud = new PagoCredito();
-                objCreditoSolicitud.setId(resultado.getString("id")); 
+                objCreditoSolicitud.setId(resultado.getString("id"));
                 objCreditoSolicitud.setNombre_completo(resultado.getString("nombre_cliente"));
                 objCreditoSolicitud.setCuotas(resultado.getInt("num_cuo"));
                 objCreditoSolicitud.setValor(resultado.getInt("mensualidad"));

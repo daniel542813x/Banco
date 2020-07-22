@@ -11,6 +11,8 @@ import static General.NuevoCliente.conexion;
 import static General.NuevoCliente.consultaSQL;
 import static General.NuevoCliente.resultado;
 import static General.NuevoCliente.sentencia;
+import static General.PagosCredito.resultado;
+import static General.PagosCredito.sentencia;
 import static General.RegistroSolicitud.conectarBD_creditos;
 import static General.RegistroSolicitud.resultado;
 import java.sql.Connection;
@@ -323,8 +325,11 @@ public class PagosInversion extends javax.swing.JInternalFrame {
         
         try {
             sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery("select id,nombre_cliente,num_meses/frecuencia as num_cuo,cuota from inversiones join solicitud_inversion using(numero_identificacion);");
-
+            if(jTextField1.getText().isEmpty()){
+                resultado = sentencia.executeQuery("select id,nombre_cliente,num_meses/frecuencia as num_cuo,cuota from inversiones join solicitud_inversion using(numero_identificacion);");
+              }else{
+                resultado = sentencia.executeQuery("select id,nombre_cliente,num_meses/frecuencia as num_cuo,cuota from inversiones join solicitud_inversion using(numero_identificacion) where numero_identificacion='"+jTextField1.getText()+"';");        
+            }
             List<PagoInversion> lista = new ArrayList<>();
             PagoInversion objCreditoSolicitud;
             while (resultado.next()) {
