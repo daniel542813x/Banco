@@ -40,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -55,7 +56,6 @@ public class Principal extends javax.swing.JFrame {
         popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1336, 928));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -100,6 +100,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem3);
+
+        jMenuItem11.setText("Ver - Actualizar datos");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem11);
 
         jMenuBar1.add(jMenu1);
 
@@ -175,7 +183,7 @@ public class Principal extends javax.swing.JFrame {
 
         jmCuentasEm.setBackground(new java.awt.Color(0, 102, 102));
         jmCuentasEm.setBorder(new javax.swing.border.MatteBorder(null));
-        jmCuentasEm.setText("Cuentas ");
+        jmCuentasEm.setText("   Cuentas");
         jmCuentasEm.setActionCommand("Cuentas");
         jmCuentasEm.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -273,6 +281,13 @@ public class Principal extends javax.swing.JFrame {
         con.show();
     }//GEN-LAST:event_consultar_cActionPerformed
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        jDesktopPane1.removeAll();
+        Ver_Actualizar con= new Ver_Actualizar();
+        jDesktopPane1.add(con);
+        con.show();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +332,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
