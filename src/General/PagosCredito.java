@@ -31,6 +31,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PagosCredito extends javax.swing.JInternalFrame {
     DefaultTableModel modelo;
+    DefaultTableModel modelo1;
+    int cp;
+    double cuotas;
     static String cadenaConexion = "jdbc:postgresql://localhost:5432/banco1?";
     static Connection conexion = null;
     static Statement sentencia = null;
@@ -45,10 +48,15 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         initComponents();
 
         modelo = new DefaultTableModel();
+
         modelo.addColumn("Id");
         modelo.addColumn("Nombre Completo");
         modelo.addColumn("Valor de la cuota");
         modelo.addColumn("Numero de cuotas");
+        
+        modelo1 = new DefaultTableModel();
+        modelo1.addColumn("Cuota");
+        modelo1.addColumn("Estado");
 
         this.getContentPane().setBackground(java.awt.Color.WHITE);
         try {
@@ -310,9 +318,17 @@ public class PagosCredito extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        seleccionar=-1;
+        cp=0;
+        cuotas=0;    
         int cantfila = modelo.getRowCount();
         for (int i = cantfila - 1; i >= 0; i--) {
             modelo.removeRow(i);
+          
+            }
+        int cantfila1 = modelo1.getRowCount();
+        for (int i = cantfila1 - 1; i >= 0; i--) {
+            modelo1.removeRow(i);
           
             }
         
@@ -364,8 +380,37 @@ public class PagosCredito extends javax.swing.JInternalFrame {
         jLabel5.setText(String.valueOf(jTable1.getValueAt(seleccionar, 0)));
         jLabel6.setText(String.valueOf(jTable1.getValueAt(seleccionar, 1)));
         
-        for(int i=1;)
-        this.jTable2.setModel(modelo);
+        int cantfila = modelo1.getRowCount();
+        for (int i = cantfila - 1; i >= 0; i--) {
+            modelo1.removeRow(i);
+          
+            }
+        cp=0;
+        try {
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery("select  cuota_pagada from creditos where id='"+jLabel5.getText()+"';");        
+            while(resultado.next()){
+                cp=Integer.parseInt(resultado.getString("cuota_pagada"));
+            }
+         } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String Str_cuotas =String.valueOf(jTable1.getValueAt(seleccionar, 3));
+        cuotas = Double.parseDouble(Str_cuotas);
+        String [] cuotas_p;
+        
+       
+        for(int i=1;i<=cuotas;i++){
+            cuotas_p=new String[2];
+            cuotas_p[0]="Cuota "+i;
+            cuotas_p[1]=i<=cp?"Pagada":"Pendiente";
+            
+            modelo1.addRow(cuotas_p);
+        }
+        this.jTable2.setModel(modelo1);
+
+        
 
 
         
@@ -373,14 +418,18 @@ public class PagosCredito extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
-
+            this.repaint();
             sentencia = conexion.createStatement();
-            if(seleccionar!=-1){
+            if(seleccionar!=-1 && cp<cuotas){
                 resultado = sentencia.executeQuery("update creditos set cuota_pagada=cuota_pagada+1 where id='"+(String.valueOf(jTable1.getValueAt(seleccionar, 0)))+"';");     
-            }else{
-                 JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-               
+            }else if(seleccionar==-1){
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");  
+
+            }else if(cp>=cuotas){
+                JOptionPane.showMessageDialog(this, "Ya ha pagado todas las cuotas"); 
+
             }
+          
         } catch (Exception e) {
             if(e.getMessage().contains("No results")){
                 JOptionPane.showMessageDialog(this, "Pagado con exito");
