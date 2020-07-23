@@ -15,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import org.postgresql.util.PSQLException;
 /**
  *
@@ -495,11 +496,17 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField12ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        consultaSQL="select * from clientes where num_ide='"+jTextField12.getText()+"';";
         if(!jTextField12.getText().isEmpty()){
+            consultaSQL="select * from clientes where num_ide='"+jTextField12.getText()+"';";
             ResultSet set =conectarBD();
             try {
                 while (set.next()){
+                    jTextField1.setText(set.getString("num_ide"));
+
+                    if(){
+                        JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
+                        break;
+                    }
                     choice1.select(set.getString("tip_ide"));
                     jTextField1.setText(set.getString("num_ide"));
                     jTextField3.setText(set.getString("nom_cli"));
@@ -518,8 +525,7 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
                 System.out.println(e.getMessage());
            }
         }else{
-            jLabel18.setText("Error, el cliente no se encuentra registrado");
-
+            JOptionPane.showMessageDialog(this, "Búsqueda invalida");
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
