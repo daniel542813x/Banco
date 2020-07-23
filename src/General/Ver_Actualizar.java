@@ -500,13 +500,11 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
             consultaSQL="select * from clientes where num_ide='"+jTextField12.getText()+"';";
             ResultSet set =conectarBD();
             try {
+                if(set.getRow()==0){
+                    JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
+                }
                 while (set.next()){
                     jTextField1.setText(set.getString("num_ide"));
-
-                    if(){
-                        JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
-                        break;
-                    }
                     choice1.select(set.getString("tip_ide"));
                     jTextField1.setText(set.getString("num_ide"));
                     jTextField3.setText(set.getString("nom_cli"));
