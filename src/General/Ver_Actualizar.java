@@ -84,8 +84,6 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
 
-        setClosable(true);
-        setMaximizable(true);
         setPreferredSize(new java.awt.Dimension(1212, 1058));
 
         jPanel2.setBackground(new java.awt.Color(78, 118, 166));
@@ -159,9 +157,10 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
 
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
         jLabel15.setFont(new java.awt.Font("Noto Sans Display Black", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Datos Personales");
 
-        jLabel19.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel19.setText("Numero de identificacion:");
 
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
@@ -241,7 +240,7 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
@@ -287,6 +286,7 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
         );
 
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Ver - Actualizar datos del cliente");
 
         jButton1.setText("Actualizar");
@@ -325,6 +325,7 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
 
         jLabel16.setBackground(new java.awt.Color(0, 24, 242));
         jLabel16.setFont(new java.awt.Font("Noto Sans Display Black", 3, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Datos de Contacto");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -351,7 +352,7 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel16))
-                .addContainerGap(1443, Short.MAX_VALUE))
+                .addContainerGap(1472, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,8 +412,8 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 2589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,9 +434,8 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
                 .addGap(473, 473, 473))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(413, Short.MAX_VALUE)))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 239, Short.MAX_VALUE)))
         );
 
         pack();

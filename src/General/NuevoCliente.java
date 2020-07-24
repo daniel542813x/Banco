@@ -79,10 +79,6 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jTextField11 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
 
-        setClosable(true);
-        setMaximizable(true);
-        setPreferredSize(new java.awt.Dimension(1212, 1058));
-
         jPanel2.setBackground(new java.awt.Color(51, 125, 142));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 3, true));
         jPanel2.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -251,9 +247,11 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
 
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
         jLabel15.setFont(new java.awt.Font("Noto Sans Display Black", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Datos Personales");
 
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nuevo Cliente");
 
         jButton1.setText("Guardar");
@@ -265,6 +263,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
 
         jLabel16.setBackground(new java.awt.Color(0, 24, 242));
         jLabel16.setFont(new java.awt.Font("Noto Sans Display Black", 3, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Datos de Contacto");
 
         jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -377,8 +376,8 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 1163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(27, Short.MAX_VALUE)))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 1178, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,10 +400,9 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(487, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(445, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 235, Short.MAX_VALUE)))
         );
 
         pack();

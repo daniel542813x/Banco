@@ -174,12 +174,11 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         jTextField20 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximizable(true);
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/credito_compra_cartera (1).png"))); // NOI18N
         jLabel1.setText("Aprobar Solicitudes Inversion");
 
@@ -209,6 +208,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel1.setBackground(new java.awt.Color(51, 148, 244));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
         jLabel2.setText("Datos Personales del Cliente");
@@ -307,6 +307,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20))
         );
 
+        jPanel2.setBackground(new java.awt.Color(51, 148, 244));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
         jLabel14.setText("Datos Inversion");
@@ -384,7 +385,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,6 +414,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel3.setBackground(new java.awt.Color(51, 148, 244));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
         jButton3.setText("Rechazar Solicitud de Inversion");
@@ -452,9 +454,10 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        jPanel4.setBackground(new java.awt.Color(51, 148, 244));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
-        jLabel23.setText("Hubicación del Cliente");
+        jLabel23.setText("Ubicación del Cliente");
 
         jLabel24.setText("Ciudad:");
 
@@ -525,6 +528,9 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo usuarios cuentas.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -555,6 +561,8 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                 .addGap(353, 353, 353)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(273, 273, 273))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,7 +589,11 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)))
         );
 
         pack();
@@ -779,6 +791,7 @@ public class RegistroSolicitudInv extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

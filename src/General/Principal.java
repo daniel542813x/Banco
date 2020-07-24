@@ -19,7 +19,6 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        this.getContentPane().setBackground(java.awt.Color.WHITE);
 
     }
 
@@ -31,11 +30,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popupMenu1 = new java.awt.PopupMenu();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jPopupMenu2 = new javax.swing.JPopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -54,26 +49,28 @@ public class Principal extends javax.swing.JFrame {
         jmCuentasEm = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
 
-        popupMenu1.setLabel("popupMenu1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 51, 51));
+        setPreferredSize(new java.awt.Dimension(1208, 859));
+
+        jDesktopPane1.setBackground(new java.awt.Color(255, 200, 217));
+        jDesktopPane1.setForeground(new java.awt.Color(255, 0, 102));
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(1068, 959));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1236, Short.MAX_VALUE)
+            .addGap(0, 1068, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 559, Short.MAX_VALUE)
+            .addGap(0, 743, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 510));
+        getContentPane().add(jDesktopPane1, java.awt.BorderLayout.CENTER);
 
-        jMenuBar1.setBackground(new java.awt.Color(18, 94, 133));
+        jMenuBar1.setBackground(new java.awt.Color(51, 0, 51));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), null));
 
         jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(0, 0, 0), null, null));
@@ -329,7 +326,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem consultar_c;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -345,9 +341,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JMenu jmCuentasEm;
-    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }
