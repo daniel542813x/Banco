@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/NuevoCliente.java</file>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/InversionAprobados.java</file>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/Ver_Actualizar.java</file>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/CreditosAprobados.java</file>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/InversionSolicitud.java</file>
             <file>file:/home/estevan/NetBeansProjects/banco1/src/General/Principal.java</file>
+            <file>file:/home/estevan/NetBeansProjects/banco1/src/General/PagosCredito.java</file>
         </group>
     </open-files>
 </project-private>
