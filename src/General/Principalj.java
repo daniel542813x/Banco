@@ -216,10 +216,10 @@ public class Principalj extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        jDesktopPane1.removeAll();
-        RegistroSolicitud r = new RegistroSolicitud();
-        jDesktopPane1.add(r);
-        r.show();
+          jDesktopPane1.removeAll();
+        Jefe_reg_s re = new Jefe_reg_s();
+        jDesktopPane1.add(re);
+        re.show();
 
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -252,8 +252,8 @@ public class Principalj extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        jDesktopPane1.removeAll();
-        RegistroSolicitudInv rinv=new RegistroSolicitudInv();
+          jDesktopPane1.removeAll();
+        jefe_sol_inv rinv=new jefe_sol_inv();
         jDesktopPane1.add(rinv);
         rinv.show();
         

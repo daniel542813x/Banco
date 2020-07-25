@@ -107,6 +107,12 @@ public class consultar_c extends javax.swing.JInternalFrame {
      
     }
     
+     void bloquear(){
+     btnaprob.setEnabled(false);
+     btnrech.setEnabled(false);
+    
+    }
+    
     public static String texto1 ="";
     public static String texto2 ="";
     public static String texto3="";
@@ -131,6 +137,7 @@ public class consultar_c extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             System.out.println("Problemas de conexion");
         }
+        
     } 
      
      
@@ -339,14 +346,15 @@ public class consultar_c extends javax.swing.JInternalFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 705, Short.MAX_VALUE)))
+                    .addGap(0, 729, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          if((txt_cod.getText().equals(""))){
+          bloquear();
+        if((txt_cod.getText().equals(""))){
                   JOptionPane.showMessageDialog(this, "campo vacio  \n¡Verifique! \n " , "ADVERTENCIA!", JOptionPane.INFORMATION_MESSAGE );
           }
           else{
