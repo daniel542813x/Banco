@@ -7,7 +7,7 @@ package General;
 
 import sprint1.Administrador;
 
-
+// clonando
 /**
  *
  * @author estevan
