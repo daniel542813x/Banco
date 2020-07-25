@@ -21,6 +21,7 @@ public class Administrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         registrar_c = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         visualizar_c = new javax.swing.JMenu();
         activar_c = new javax.swing.JMenuItem();
         men_vis_cuenta = new javax.swing.JMenuItem();
@@ -61,13 +62,30 @@ public class Administrador extends javax.swing.JFrame {
         registrar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/system_file_manager_wallet_22488.png"))); // NOI18N
         registrar_c.setText("registrar");
 
-        jMenuItem1.setText("registrar cuenta");
+        jMenuItem1.setText("registrar empleados");
+        jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jMenuItem1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         registrar_c.add(jMenuItem1);
+
+        jMenuItem2.setText("registrar cuentas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        registrar_c.add(jMenuItem2);
 
         jMenuBar1.add(registrar_c);
 
@@ -137,6 +155,16 @@ public class Administrador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnPrincipalActionPerformed
 
+    private void jMenuItem1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1AncestorAdded
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       registrar_cuentas reg =new registrar_cuentas();
+      reg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -179,6 +207,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnPrincipal;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem men_vis_cuenta;
     private javax.swing.JMenu registrar_c;
     private javax.swing.JMenu visualizar_c;
