@@ -119,7 +119,11 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
         }
     }
      
-     
+     void bloquear(){
+    jButton2.setEnabled(false);
+    jButton3.setEnabled(false);
+    
+    }
 
     
     @SuppressWarnings("unchecked")
@@ -654,7 +658,7 @@ public class RegistroSolicitud extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        bloquear();
          int cantfila = jTable1.getRowCount();
         for (int i = cantfila - 1; i >= 0; i--) {
             modelo.removeRow(i);
