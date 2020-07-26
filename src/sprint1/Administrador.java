@@ -147,7 +147,9 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_men_vis_cuentaActionPerformed
 
     private void activar_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activar_cActionPerformed
-        
+        registrar_cuentas reg =new registrar_cuentas();
+      reg.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_activar_cActionPerformed
 
     private void btnPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalActionPerformed
