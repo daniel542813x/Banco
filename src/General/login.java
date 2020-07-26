@@ -56,7 +56,7 @@ public class login extends javax.swing.JFrame {
               if (tip.equals("jefe")){
               this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Bienvenido\n"+"  Jefe de credito");
-                Principalj ing= new Principalj();
+                Principal_jefe_decredito ing= new Principal_jefe_decredito();
                 ing.setVisible(true);
                 ing.pack();
                 
