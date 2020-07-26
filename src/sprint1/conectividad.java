@@ -5,8 +5,8 @@ import java.sql.*;
  public class conectividad{
    Connection conexion=null;
    
-   String pass ="postgres1";
-   String user= "postgres" ;
+   String pass ="";
+   String user= "" ;
  
    public void conectarme(){
        
