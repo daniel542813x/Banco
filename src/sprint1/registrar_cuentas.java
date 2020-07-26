@@ -50,6 +50,12 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             System.out.println("Problemas de conexion");
         }
     }  
+      void limpiar (){
+      this.txtcod_e.setText("");
+      this.txtusr.setText("");
+      this.txtcon.setText("");
+      this.cmbtipo.setSelectedIndex(0); 
+      }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -70,6 +76,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
+        btn_eli = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -134,6 +141,13 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
 
+        btn_eli.setText("eliminar");
+        btn_eli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -153,8 +167,11 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
                         .addGap(32, 32, 32)
                         .addComponent(jButton2))
                     .addComponent(txtusr, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcon, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(162, 162, 162))
+                    .addComponent(txtcon, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(jButton3)))
+                .addGap(149, 149, 149))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,14 +181,14 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(btn_g)
-                        .addGap(61, 61, 61)
+                        .addGap(46, 46, 46)
                         .addComponent(jButton4)
-                        .addGap(88, 88, 88)
-                        .addComponent(jButton3))
+                        .addGap(33, 33, 33)
+                        .addComponent(btn_eli))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(206, 206, 206)
                         .addComponent(jLabel45)))
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +214,8 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_g)
                             .addComponent(jButton4)
-                            .addComponent(jButton3))
+                            .addComponent(jButton3)
+                            .addComponent(btn_eli))
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -267,13 +285,9 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             
              JOptionPane.showMessageDialog(this, "empleado no exixte ");
         }
-
-         
-        
-        
-        
-               
+     
         }
+        limpiar();
     }//GEN-LAST:event_btn_gActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -298,11 +312,18 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
         } catch (SQLException ex) {
             Logger.getLogger(JUsuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Conexion();
-        
+
+        Conexion();
+         if((txtcod_e.getText().equals(""))   || 
+          (txtusr.getText().equals(""))  || 
+          (txtcon.getText().equals("")) )
+          {   
+            JOptionPane.showMessageDialog(this, "Rellene todos los campos \n¡Verifique! \n " , "ADVERTENCIA!", JOptionPane.INFORMATION_MESSAGE );       
+        }else{
         try {
             ps = con.prepareStatement("UPDATE usuarios SET usuario=?, contraseña=?, tipo_de_cuenta=? WHERE empleado=?");
            
@@ -315,6 +336,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             int res = ps.executeUpdate();
             
             if(res > 0){
+                 JOptionPane.showMessageDialog(null, "** Cuenta modificada **");
                  
             } else {
                  JOptionPane.showMessageDialog(null, "Error al Modificar el registro");
@@ -324,6 +346,8 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
         } catch (Exception e) {
             System.err.println(e);
         }
+        limpiar();
+         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -334,8 +358,41 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
       
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btn_eliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliActionPerformed
+     Conexion();
+     
+        Conexion();
+         if((txtcod_e.getText().equals("")) )
+          {   
+            JOptionPane.showMessageDialog(this, "Rellene  los campos \n¡Verifique! \n " , "ADVERTENCIA!", JOptionPane.INFORMATION_MESSAGE );       
+        }else{
+            try {
+                ps = con.prepareStatement("delete from  usuarios  WHERE empleado=?");
+
+                 ps.setString(1, txtcod_e.getText());
+
+                int res = ps.executeUpdate();
+
+                if(res > 0){
+
+                     JOptionPane.showMessageDialog(null, "** Cuenta eliminada **");
+
+                } else {
+                     JOptionPane.showMessageDialog(null, "Error no existe/n"+"cuenta no eliminada");
+
+
+                }
+
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        limpiar();
+    }
+    }//GEN-LAST:event_btn_eliActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_eli;
     private javax.swing.JButton btn_g;
     private javax.swing.JComboBox<String> cmbtipo;
     private javax.swing.JButton jButton1;
