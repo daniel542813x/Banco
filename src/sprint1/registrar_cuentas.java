@@ -89,8 +89,10 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel1.setText("codigo empleado");
+        jLabel1.setText("Codigo empleado");
 
+        txtcod_e.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        txtcod_e.setForeground(new java.awt.Color(0, 51, 51));
         txtcod_e.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcod_eActionPerformed(evt);
@@ -101,6 +103,8 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
         jLabel2.setForeground(new java.awt.Color(0, 51, 51));
         jLabel2.setText("Nombre de usuario");
 
+        txtusr.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        txtusr.setForeground(new java.awt.Color(0, 51, 51));
         txtusr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtusrActionPerformed(evt);
@@ -109,12 +113,16 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
 
         jLabel3.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel3.setText("contraseña");
+        jLabel3.setText("Contraseña");
+
+        txtcon.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        txtcon.setForeground(new java.awt.Color(0, 51, 51));
 
         jLabel4.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel4.setText("tipo de cuenta");
+        jLabel4.setText("Tipo de cuenta");
 
+        cmbtipo.setBackground(new java.awt.Color(204, 255, 255));
         cmbtipo.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         cmbtipo.setForeground(new java.awt.Color(0, 51, 51));
         cmbtipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "jefe", "auxiliar" }));
@@ -124,7 +132,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             }
         });
 
-        btn_g.setBackground(new java.awt.Color(204, 255, 255));
+        btn_g.setBackground(new java.awt.Color(204, 255, 204));
         btn_g.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         btn_g.setForeground(new java.awt.Color(0, 51, 51));
         btn_g.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registrar c.png"))); // NOI18N
@@ -136,7 +144,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setBackground(new java.awt.Color(204, 255, 204));
         jButton2.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 51, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar.png"))); // NOI18N
@@ -148,7 +156,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setBackground(new java.awt.Color(204, 255, 204));
         jButton3.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 51, 51));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
@@ -161,7 +169,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(204, 255, 255));
+        jButton4.setBackground(new java.awt.Color(204, 255, 204));
         jButton4.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 51, 51));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/actualizarm.png"))); // NOI18N
@@ -175,7 +183,7 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
 
-        btn_eli.setBackground(new java.awt.Color(204, 255, 255));
+        btn_eli.setBackground(new java.awt.Color(204, 255, 204));
         btn_eli.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
         btn_eli.setForeground(new java.awt.Color(0, 51, 51));
         btn_eli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eliminarss.png"))); // NOI18N
@@ -192,45 +200,44 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(btn_g)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_eli)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtcod_e, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtusr, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtcon, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(74, 74, 74)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel45)
-                .addGap(246, 246, 246))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtcod_e, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtusr, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGap(66, 66, 66)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtcon, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGap(56, 56, 56)
+                            .addComponent(jButton2)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(btn_g)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton4)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_eli)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton3)
+                            .addGap(32, 32, 32)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel45)
+                        .addGap(246, 246, 246))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,13 +261,13 @@ public class registrar_cuentas  extends javax.swing.JFrame  {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_g)
                     .addComponent(jButton4)
-                    .addComponent(jButton3)
-                    .addComponent(btn_eli))
-                .addGap(17, 17, 17))
+                    .addComponent(btn_eli)
+                    .addComponent(jButton3))
+                .addGap(39, 39, 39))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
