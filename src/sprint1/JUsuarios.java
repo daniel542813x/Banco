@@ -159,8 +159,9 @@ public class JUsuarios extends javax.swing.JFrame {
         jLabel6.setText("Correo Electronico");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 140, 20));
 
-        btn_aceptar.setBackground(new java.awt.Color(255, 102, 0));
+        btn_aceptar.setBackground(new java.awt.Color(204, 255, 204));
         btn_aceptar.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        btn_aceptar.setForeground(new java.awt.Color(0, 102, 102));
         btn_aceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registrar c.png"))); // NOI18N
         btn_aceptar.setText("Aceptar");
         btn_aceptar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -171,10 +172,10 @@ public class JUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(btn_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 150, 40));
 
-        jLabel7.setFont(new java.awt.Font("Gabriola", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Gabriola", 1, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 255, 204));
         jLabel7.setText("Codigo empleado");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         txt_cod_empleado.setBackground(new java.awt.Color(153, 102, 255));
         txt_cod_empleado.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
@@ -184,7 +185,7 @@ public class JUsuarios extends javax.swing.JFrame {
                 txt_cod_empleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_cod_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 110, 30));
+        getContentPane().add(txt_cod_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 110, 30));
 
         jLabel8.setFont(new java.awt.Font("Gabriola", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -315,9 +316,9 @@ public class JUsuarios extends javax.swing.JFrame {
         lbl_foto.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         getContentPane().add(lbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 230, 220));
 
-        btn_agregar.setBackground(new java.awt.Color(0, 204, 204));
+        btn_agregar.setBackground(new java.awt.Color(204, 255, 204));
         btn_agregar.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        btn_agregar.setForeground(new java.awt.Color(0, 0, 0));
+        btn_agregar.setForeground(new java.awt.Color(0, 102, 102));
         btn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadirs.png"))); // NOI18N
         btn_agregar.setText("Agregar Foto");
         btn_agregar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -334,8 +335,9 @@ public class JUsuarios extends javax.swing.JFrame {
         lblAvisoCorreo.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(lblAvisoCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 140, 10));
 
-        btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
+        btnCancelar.setBackground(new java.awt.Color(204, 255, 204));
         btnCancelar.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(0, 102, 102));
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/action_exit_close_remove_13915.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -346,9 +348,9 @@ public class JUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 160, 40));
 
-        btnBuscar.setBackground(new java.awt.Color(0, 102, 255));
+        btnBuscar.setBackground(new java.awt.Color(204, 255, 204));
         btnBuscar.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setForeground(new java.awt.Color(0, 102, 102));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscarmed.png"))); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -358,8 +360,9 @@ public class JUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 120, 40));
 
-        btnModificar.setBackground(new java.awt.Color(0, 102, 102));
+        btnModificar.setBackground(new java.awt.Color(204, 255, 204));
         btnModificar.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(0, 102, 102));
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/actualizarm.png"))); // NOI18N
         btnModificar.setText("Modificar");
         btnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -370,8 +373,9 @@ public class JUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 160, 40));
 
-        btnConsultar.setBackground(new java.awt.Color(0, 51, 255));
+        btnConsultar.setBackground(new java.awt.Color(204, 255, 204));
         btnConsultar.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(0, 102, 102));
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar.png"))); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -382,9 +386,9 @@ public class JUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 510, 160, 40));
 
-        btnMenuPrin.setBackground(new java.awt.Color(0, 204, 204));
+        btnMenuPrin.setBackground(new java.awt.Color(204, 255, 204));
         btnMenuPrin.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
-        btnMenuPrin.setForeground(new java.awt.Color(0, 0, 0));
+        btnMenuPrin.setForeground(new java.awt.Color(0, 102, 102));
         btnMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
         btnMenuPrin.setText("Menu Principal");
         btnMenuPrin.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);

@@ -98,9 +98,9 @@ public class ConsultarCuentas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCuentas.setBackground(new java.awt.Color(255, 51, 255));
+        lblCuentas.setBackground(new java.awt.Color(204, 255, 255));
         lblCuentas.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
-        lblCuentas.setForeground(new java.awt.Color(153, 0, 153));
+        lblCuentas.setForeground(new java.awt.Color(0, 153, 153));
         lblCuentas.setText("Cuentas Empleados");
         getContentPane().add(lblCuentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 420, -1));
 
@@ -119,9 +119,9 @@ public class ConsultarCuentas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1290, 350));
 
-        txtRegresar.setBackground(new java.awt.Color(0, 204, 204));
+        txtRegresar.setBackground(new java.awt.Color(204, 255, 204));
         txtRegresar.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        txtRegresar.setForeground(new java.awt.Color(153, 0, 153));
+        txtRegresar.setForeground(new java.awt.Color(0, 102, 102));
         txtRegresar.setText("Regresar");
         txtRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class ConsultarCuentas extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/banco su mano amiga logo.png"))); // NOI18N
         jLabel2.setText("lblLogo");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, 200, 60));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 200, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo cuentas.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
