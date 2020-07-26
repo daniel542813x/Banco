@@ -77,6 +77,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setText("Registrar      ");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (1).png"))); // NOI18N
         jMenuItem2.setText("Registrar Solicitud de Inversion");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +87,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (2).png"))); // NOI18N
         jMenuItem1.setText("Registrar Solicitud de Credito");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +97,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (3).png"))); // NOI18N
         jMenuItem3.setText("Registrar Nuevo Cliente");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +107,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/visualizarms.png"))); // NOI18N
         jMenuItem11.setText("Ver - Actualizar datos");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +124,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.setActionCommand("Administracion de Solicitudes    ");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (2).png"))); // NOI18N
         jMenuItem4.setText("Administrar Solicitudes de Credito");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +134,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem4);
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (1).png"))); // NOI18N
         jMenuItem5.setText("Administrar Solicitudes de Inversion");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +144,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (4).png"))); // NOI18N
         jMenuItem8.setText("Creditos Aprobados");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +154,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem8);
 
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (5).png"))); // NOI18N
         jMenuItem9.setText("Inversiones Aprobadas");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +164,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem9);
 
+        consultar_c.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
+        consultar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar (1).png"))); // NOI18N
         consultar_c.setText("consulltar solicitudes");
         consultar_c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +181,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu3.setActionCommand("   Pagos");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/comprar (1).png"))); // NOI18N
         jMenuItem6.setText("Pagos de Creditos");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +191,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem6);
 
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/comprar.png"))); // NOI18N
         jMenuItem7.setText("Pagos a Inversionistas");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
