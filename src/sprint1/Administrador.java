@@ -31,8 +31,8 @@ public class Administrador extends javax.swing.JFrame {
         setTitle("Administrador");
 
         btnPrincipal.setBackground(new java.awt.Color(153, 255, 255));
-        btnPrincipal.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
-        btnPrincipal.setForeground(new java.awt.Color(0, 102, 102));
+        btnPrincipal.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
+        btnPrincipal.setForeground(new java.awt.Color(0, 51, 51));
         btnPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
         btnPrincipal.setText("salir");
         btnPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -50,27 +50,30 @@ public class Administrador extends javax.swing.JFrame {
         Desktop_ALayout.setHorizontalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(419, Short.MAX_VALUE)
+                .addContainerGap(426, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
-                .addGap(39, 39, 39))
+                .addGap(27, 27, 27))
         );
         Desktop_ALayout.setVerticalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(275, Short.MAX_VALUE)
+                .addContainerGap(282, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
-                .addGap(29, 29, 29))
+                .addGap(22, 22, 22))
         );
 
         jMenuBar1.setForeground(new java.awt.Color(153, 255, 255));
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         registrar_c.setBackground(new java.awt.Color(0, 0, 0));
-        registrar_c.setForeground(new java.awt.Color(0, 102, 102));
-        registrar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/system_file_manager_wallet_22488.png"))); // NOI18N
+        registrar_c.setForeground(new java.awt.Color(0, 51, 51));
+        registrar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/archivom.png"))); // NOI18N
         registrar_c.setText("registrar");
         registrar_c.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
 
+        jMenuItem1.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(0, 51, 51));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro.png"))); // NOI18N
         jMenuItem1.setText("registrar empleados");
         jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
@@ -88,6 +91,9 @@ public class Administrador extends javax.swing.JFrame {
         });
         registrar_c.add(jMenuItem1);
 
+        jMenuItem2.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 51, 51));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/regsecion.png"))); // NOI18N
         jMenuItem2.setText("registrar cuentas");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,11 +105,14 @@ public class Administrador extends javax.swing.JFrame {
         jMenuBar1.add(registrar_c);
 
         visualizar_c.setBackground(new java.awt.Color(0, 0, 0));
-        visualizar_c.setForeground(new java.awt.Color(0, 102, 102));
-        visualizar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/loginmanager_10029.png"))); // NOI18N
+        visualizar_c.setForeground(new java.awt.Color(0, 51, 51));
+        visualizar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cuentas.png"))); // NOI18N
         visualizar_c.setText("cuentas");
         visualizar_c.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
 
+        activar_c.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
+        activar_c.setForeground(new java.awt.Color(0, 51, 51));
+        activar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eliminarm.png"))); // NOI18N
         activar_c.setText("Eliminar cuentas ");
         activar_c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +121,9 @@ public class Administrador extends javax.swing.JFrame {
         });
         visualizar_c.add(activar_c);
 
+        men_vis_cuenta.setFont(new java.awt.Font("Sitka Subheading", 1, 14)); // NOI18N
+        men_vis_cuenta.setForeground(new java.awt.Color(0, 51, 51));
+        men_vis_cuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/visualizarms.png"))); // NOI18N
         men_vis_cuenta.setText("visualizar cuentas");
         men_vis_cuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
