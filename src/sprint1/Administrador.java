@@ -31,7 +31,8 @@ public class Administrador extends javax.swing.JFrame {
         setTitle("Administrador");
 
         btnPrincipal.setBackground(new java.awt.Color(153, 255, 255));
-        btnPrincipal.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        btnPrincipal.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        btnPrincipal.setForeground(new java.awt.Color(0, 102, 102));
         btnPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
         btnPrincipal.setText("salir");
         btnPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -49,22 +50,26 @@ public class Administrador extends javax.swing.JFrame {
         Desktop_ALayout.setHorizontalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(405, Short.MAX_VALUE)
+                .addContainerGap(419, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
                 .addGap(39, 39, 39))
         );
         Desktop_ALayout.setVerticalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(286, Short.MAX_VALUE)
+                .addContainerGap(275, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
                 .addGap(29, 29, 29))
         );
 
         jMenuBar1.setForeground(new java.awt.Color(153, 255, 255));
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        registrar_c.setBackground(new java.awt.Color(0, 0, 0));
+        registrar_c.setForeground(new java.awt.Color(0, 102, 102));
         registrar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/system_file_manager_wallet_22488.png"))); // NOI18N
         registrar_c.setText("registrar");
+        registrar_c.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
 
         jMenuItem1.setText("registrar empleados");
         jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -93,8 +98,11 @@ public class Administrador extends javax.swing.JFrame {
 
         jMenuBar1.add(registrar_c);
 
+        visualizar_c.setBackground(new java.awt.Color(0, 0, 0));
+        visualizar_c.setForeground(new java.awt.Color(0, 102, 102));
         visualizar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/loginmanager_10029.png"))); // NOI18N
         visualizar_c.setText("cuentas");
+        visualizar_c.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
 
         activar_c.setText("Eliminar cuentas ");
         activar_c.addActionListener(new java.awt.event.ActionListener() {
