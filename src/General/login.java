@@ -27,6 +27,7 @@ public class login extends javax.swing.JFrame {
         
         
         initComponents();
+        
     }
 
       void acceder (String usr,String pass){
@@ -116,6 +117,8 @@ public class login extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("iniciar seción");
+        setResizable(false);
 
         lblusr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/name usr.png"))); // NOI18N
         lblusr.setText("Usuario");
@@ -193,6 +196,7 @@ public class login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtusrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusrActionPerformed

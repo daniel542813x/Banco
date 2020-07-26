@@ -30,9 +30,12 @@ public class Administrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador");
 
-        btnPrincipal.setBackground(new java.awt.Color(0, 102, 255));
+        btnPrincipal.setBackground(new java.awt.Color(153, 255, 255));
         btnPrincipal.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        btnPrincipal.setText("Principal");
+        btnPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
+        btnPrincipal.setText("salir");
+        btnPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnPrincipal.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrincipalActionPerformed(evt);
@@ -46,16 +49,16 @@ public class Administrador extends javax.swing.JFrame {
         Desktop_ALayout.setHorizontalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(422, Short.MAX_VALUE)
+                .addContainerGap(405, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
-                .addContainerGap())
+                .addGap(39, 39, 39))
         );
         Desktop_ALayout.setVerticalGroup(
             Desktop_ALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Desktop_ALayout.createSequentialGroup()
-                .addContainerGap(318, Short.MAX_VALUE)
+                .addContainerGap(286, Short.MAX_VALUE)
                 .addComponent(btnPrincipal)
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         jMenuBar1.setForeground(new java.awt.Color(153, 255, 255));
