@@ -65,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 743, Short.MAX_VALUE)
+            .addGap(0, 727, Short.MAX_VALUE)
         );
 
         getContentPane().add(jDesktopPane1, java.awt.BorderLayout.CENTER);
@@ -73,11 +73,17 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(51, 0, 51));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), null));
 
+        jMenu1.setBackground(new java.awt.Color(204, 255, 255));
         jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(0, 0, 0), null, null));
+        jMenu1.setForeground(new java.awt.Color(0, 51, 51));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/archivom.png"))); // NOI18N
         jMenu1.setText("Registrar      ");
-        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu1.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem2.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem2.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (1).png"))); // NOI18N
         jMenuItem2.setText("Registrar Solicitud de Inversion");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +94,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem1.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (2).png"))); // NOI18N
         jMenuItem1.setText("Registrar Solicitud de Credito");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +107,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem3.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem3.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadir (3).png"))); // NOI18N
         jMenuItem3.setText("Registrar Nuevo Cliente");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +120,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
+        jMenuItem11.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem11.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem11.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/visualizarms.png"))); // NOI18N
         jMenuItem11.setText("Ver - Actualizar datos");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
@@ -119,12 +134,18 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(204, 255, 255));
         jMenu2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 51, 51), new java.awt.Color(102, 0, 51))));
+        jMenu2.setForeground(new java.awt.Color(0, 51, 51));
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/revision.png"))); // NOI18N
         jMenu2.setText("Administracion de Solicitudes     ");
         jMenu2.setActionCommand("Administracion de Solicitudes    ");
-        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu2.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem4.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem4.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem4.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (2).png"))); // NOI18N
         jMenuItem4.setText("Administrar Solicitudes de Credito");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +156,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem5.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem5.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (1).png"))); // NOI18N
         jMenuItem5.setText("Administrar Solicitudes de Inversion");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +169,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem8.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem8.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (4).png"))); // NOI18N
         jMenuItem8.setText("Creditos Aprobados");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +182,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem8);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem9.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem9.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem9.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (5).png"))); // NOI18N
         jMenuItem9.setText("Inversiones Aprobadas");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +195,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(jMenuItem9);
 
         consultar_c.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
+        consultar_c.setBackground(new java.awt.Color(204, 255, 255));
+        consultar_c.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        consultar_c.setForeground(new java.awt.Color(0, 51, 51));
         consultar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar (1).png"))); // NOI18N
         consultar_c.setText("consulltar solicitudes");
         consultar_c.addActionListener(new java.awt.event.ActionListener() {
@@ -176,12 +209,19 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(204, 255, 255));
         jMenu3.setBorder(new javax.swing.border.MatteBorder(null));
+        jMenu3.setForeground(new java.awt.Color(0, 51, 51));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pagos.png"))); // NOI18N
         jMenu3.setText("Pagos");
         jMenu3.setActionCommand("   Pagos");
-        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu3.setFocusable(false);
+        jMenu3.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem6.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem6.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem6.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/comprar (1).png"))); // NOI18N
         jMenuItem6.setText("Pagos de Creditos");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +232,9 @@ public class Principal extends javax.swing.JFrame {
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem7.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem7.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem7.setForeground(new java.awt.Color(0, 51, 51));
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/comprar.png"))); // NOI18N
         jMenuItem7.setText("Pagos a Inversionistas");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -203,12 +246,19 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jmCuentasEm.setBackground(new java.awt.Color(0, 102, 102));
+        jmCuentasEm.setBackground(new java.awt.Color(204, 255, 255));
         jmCuentasEm.setBorder(new javax.swing.border.MatteBorder(null));
+        jmCuentasEm.setForeground(new java.awt.Color(0, 51, 51));
+        jmCuentasEm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/name usr.png"))); // NOI18N
         jmCuentasEm.setText("   Cuentas");
         jmCuentasEm.setActionCommand("Cuentas");
-        jmCuentasEm.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jmCuentasEm.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setBackground(new java.awt.Color(204, 255, 255));
+        jMenuItem10.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
+        jMenuItem10.setForeground(new java.awt.Color(0, 51, 51));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/opcion-multimedia.png"))); // NOI18N
         jMenuItem10.setText("Menu Principal");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,7 +340,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Administrador vista = new Administrador();
+        login vista = new login();
         vista.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed

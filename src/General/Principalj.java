@@ -73,6 +73,7 @@ public class Principalj extends javax.swing.JFrame {
         jMenuBar1.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.MatteBorder(null), null));
 
         jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(0, 0, 0), null, null));
+        jMenu1.setForeground(new java.awt.Color(0, 51, 51));
         jMenu1.setText("Registrar      ");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -111,6 +112,7 @@ public class Principalj extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 51, 51), new java.awt.Color(102, 0, 51))));
+        jMenu2.setForeground(new java.awt.Color(0, 51, 51));
         jMenu2.setText("Administracion de Solicitudes     ");
         jMenu2.setActionCommand("Administracion de Solicitudes    ");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -182,6 +184,7 @@ public class Principalj extends javax.swing.JFrame {
 
         jmCuentasEm.setBackground(new java.awt.Color(0, 102, 102));
         jmCuentasEm.setBorder(new javax.swing.border.MatteBorder(null));
+        jmCuentasEm.setForeground(new java.awt.Color(0, 51, 51));
         jmCuentasEm.setText("   Cuentas");
         jmCuentasEm.setActionCommand("Cuentas");
         jmCuentasEm.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
