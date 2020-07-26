@@ -46,7 +46,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="activar_c">
               <Properties>
-                <Property name="text" type="java.lang.String" value="activar o desactivar cuentas"/>
+                <Property name="text" type="java.lang.String" value="Eliminar cuentas "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activar_cActionPerformed"/>

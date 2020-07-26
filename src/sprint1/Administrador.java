@@ -2,6 +2,7 @@
 package sprint1;
 
 import General.Principal;
+import General.login;
 
 
 public class Administrador extends javax.swing.JFrame {
@@ -92,7 +93,7 @@ public class Administrador extends javax.swing.JFrame {
         visualizar_c.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/loginmanager_10029.png"))); // NOI18N
         visualizar_c.setText("cuentas");
 
-        activar_c.setText("activar o desactivar cuentas");
+        activar_c.setText("Eliminar cuentas ");
         activar_c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activar_cActionPerformed(evt);
@@ -146,11 +147,11 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_men_vis_cuentaActionPerformed
 
     private void activar_cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activar_cActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_activar_cActionPerformed
 
     private void btnPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalActionPerformed
-        Principal vista = new Principal();
+        login vista  = new login();
         vista.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPrincipalActionPerformed
