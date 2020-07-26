@@ -171,9 +171,11 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
         jLabel1.setText("Aprobar Solicitudes Inversion");
 
         jButton1.setBackground(new java.awt.Color(204, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar.png"))); // NOI18N
         jButton1.setText("Consultar solicitud");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -204,10 +206,12 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         btnrech.setBackground(new java.awt.Color(204, 255, 255));
-        btnrech.setForeground(new java.awt.Color(0, 0, 0));
+        btnrech.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        btnrech.setForeground(new java.awt.Color(0, 51, 51));
         btnrech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rechazado.png"))); // NOI18N
         btnrech.setText("Rechazar Solicitud de Inversion");
         btnrech.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnrech.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnrech.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnrechActionPerformed(evt);
@@ -215,9 +219,11 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
         });
 
         btnaprob.setBackground(new java.awt.Color(204, 255, 255));
-        btnaprob.setForeground(new java.awt.Color(0, 0, 0));
+        btnaprob.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        btnaprob.setForeground(new java.awt.Color(0, 51, 51));
         btnaprob.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/aprobado.png"))); // NOI18N
         btnaprob.setText("Aprobar Solicitud de Inversion");
+        btnaprob.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnaprob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnaprobActionPerformed(evt);
@@ -225,9 +231,11 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
         });
 
         salir.setBackground(new java.awt.Color(204, 255, 255));
-        salir.setForeground(new java.awt.Color(0, 0, 0));
+        salir.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        salir.setForeground(new java.awt.Color(0, 51, 51));
         salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
         salir.setText("regresar");
+        salir.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirActionPerformed(evt);
@@ -298,8 +306,9 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(232, 232, 232)
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

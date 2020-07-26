@@ -169,7 +169,12 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadirs.png"))); // NOI18N
         jButton1.setText("Nuevo");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -533,16 +538,24 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/banco mano amiga.png"))); // NOI18N
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/guardar05.png"))); // NOI18N
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 51, 51));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registrar c.png"))); // NOI18N
         jButton2.setText("Guardar");
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/ver04.jpg"))); // NOI18N
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 51, 51));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/vision.png"))); // NOI18N
         jButton3.setText("Ver Registro");
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

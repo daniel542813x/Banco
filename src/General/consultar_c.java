@@ -171,9 +171,11 @@ public class consultar_c extends javax.swing.JInternalFrame {
         jLabel1.setText("Aprobar Solicitudes Inversion");
 
         jButton1.setBackground(new java.awt.Color(204, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Sitka Small", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/buscar.png"))); // NOI18N
         jButton1.setText("Consultar solicitud");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

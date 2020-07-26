@@ -119,7 +119,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
-        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem11.setBackground(new java.awt.Color(204, 255, 255));
         jMenuItem11.setFont(new java.awt.Font("Sitka Small", 1, 15)); // NOI18N
         jMenuItem11.setForeground(new java.awt.Color(0, 51, 51));

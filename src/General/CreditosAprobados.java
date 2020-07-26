@@ -163,7 +163,11 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anadirs.png"))); // NOI18N
         jButton1.setText("Nuevo");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -310,7 +314,11 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
 
         jLabel16.setText("Tasa de Interes");
 
+        jButton2.setBackground(new java.awt.Color(204, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 51, 51));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/contabilidad.png"))); // NOI18N
         jButton2.setText("Calcular");
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -448,6 +456,9 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 51, 51));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cronograma.png"))); // NOI18N
         jButton3.setText("Generar Cronograma de Pagos");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -455,7 +466,11 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(204, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 51, 51));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/vision.png"))); // NOI18N
         jButton4.setText("Ver Registro");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -477,9 +492,9 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                                 .addGap(48, 48, 48)
                                 .addComponent(jButton3))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
+                                .addGap(88, 88, 88)
                                 .addComponent(jButton4)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,7 +553,7 @@ public class CreditosAprobados extends javax.swing.JInternalFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)
