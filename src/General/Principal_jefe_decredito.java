@@ -51,6 +51,7 @@ public class Principal_jefe_decredito extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 51));
+        setPreferredSize(new java.awt.Dimension(1294, 912));
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 200, 217));
         jDesktopPane1.setForeground(new java.awt.Color(255, 0, 102));
@@ -383,6 +384,8 @@ public class Principal_jefe_decredito extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal_jefe_decredito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

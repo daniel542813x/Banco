@@ -148,6 +148,7 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1294, 912));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/General/solicicred1.png"))); // NOI18N
@@ -467,7 +468,7 @@ public class SolicitudInversion extends javax.swing.JInternalFrame{
         jPanel6.setBackground(new java.awt.Color(70, 174, 180));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
 
-        jLabel44.setText("Hubicación Cliente");
+        jLabel44.setText("Ubicación Cliente");
 
         jLabel36.setText("Ciudad:");
 

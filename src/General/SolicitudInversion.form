@@ -20,6 +20,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1294, 912]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -659,7 +662,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel44">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hubicaci&#xf3;n Cliente"/>
+            <Property name="text" type="java.lang.String" value="Ubicaci&#xf3;n Cliente"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel36">

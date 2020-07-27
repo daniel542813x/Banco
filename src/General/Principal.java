@@ -51,7 +51,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 51));
-        setPreferredSize(new java.awt.Dimension(1208, 859));
+        setPreferredSize(new java.awt.Dimension(1294, 912));
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 200, 217));
         jDesktopPane1.setForeground(new java.awt.Color(255, 0, 102));
@@ -213,7 +213,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu3.setBorder(new javax.swing.border.MatteBorder(null));
         jMenu3.setForeground(new java.awt.Color(0, 51, 51));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pagos.png"))); // NOI18N
-        jMenu3.setText("Pagos");
+        jMenu3.setText("   Pagos    ");
         jMenu3.setActionCommand("   Pagos");
         jMenu3.setFocusable(false);
         jMenu3.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
@@ -250,7 +250,7 @@ public class Principal extends javax.swing.JFrame {
         jmCuentasEm.setBorder(new javax.swing.border.MatteBorder(null));
         jmCuentasEm.setForeground(new java.awt.Color(0, 51, 51));
         jmCuentasEm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/name usr.png"))); // NOI18N
-        jmCuentasEm.setText("   Cuentas");
+        jmCuentasEm.setText("Cuentas");
         jmCuentasEm.setActionCommand("Cuentas");
         jmCuentasEm.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
@@ -385,6 +385,7 @@ public class Principal extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
