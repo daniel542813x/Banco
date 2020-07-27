@@ -372,7 +372,6 @@
               <Image iconType="3" name="/icon/name usr.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cuentas"/>
-            <Property name="actionCommand" type="java.lang.String" value="Cuentas"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Small" size="16" style="1"/>
             </Property>

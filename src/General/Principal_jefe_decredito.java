@@ -213,7 +213,7 @@ public class Principal_jefe_decredito extends javax.swing.JFrame {
         jMenu3.setBorder(new javax.swing.border.MatteBorder(null));
         jMenu3.setForeground(new java.awt.Color(0, 51, 51));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pagos.png"))); // NOI18N
-        jMenu3.setText("Pagos");
+        jMenu3.setText("   Pagos");
         jMenu3.setActionCommand("   Pagos");
         jMenu3.setFocusable(false);
         jMenu3.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N

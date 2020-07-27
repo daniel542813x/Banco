@@ -107,11 +107,6 @@ public class consultar_c extends javax.swing.JInternalFrame {
      
     }
     
-     void bloquear(){
-     btnaprob.setEnabled(false);
-     btnrech.setEnabled(false);
-    
-    }
     
     public static String texto1 ="";
     public static String texto2 ="";
@@ -129,7 +124,7 @@ public class consultar_c extends javax.swing.JInternalFrame {
         try {
             Class.forName("org.postgresql.Driver");
             
-            con = DriverManager.getConnection(url, "estevan",password);
+            con = DriverManager.getConnection(url, "estevan","");
             
             if (con != null) {
                 System.out.println("Conectando a Base de Datos...");
@@ -153,8 +148,6 @@ public class consultar_c extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        btnrech = new javax.swing.JButton();
-        btnaprob = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         txt_cod = new javax.swing.JTextField();
@@ -205,27 +198,6 @@ public class consultar_c extends javax.swing.JInternalFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnrech.setBackground(new java.awt.Color(204, 255, 255));
-        btnrech.setForeground(new java.awt.Color(0, 0, 0));
-        btnrech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rechazado.png"))); // NOI18N
-        btnrech.setText("Rechazar Solicitud de Inversion");
-        btnrech.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnrech.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrechActionPerformed(evt);
-            }
-        });
-
-        btnaprob.setBackground(new java.awt.Color(204, 255, 255));
-        btnaprob.setForeground(new java.awt.Color(0, 0, 0));
-        btnaprob.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/aprobado.png"))); // NOI18N
-        btnaprob.setText("Aprobar Solicitud de Inversion");
-        btnaprob.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnaprobActionPerformed(evt);
-            }
-        });
-
         salir.setBackground(new java.awt.Color(204, 255, 255));
         salir.setForeground(new java.awt.Color(0, 0, 0));
         salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/retorno.png"))); // NOI18N
@@ -241,22 +213,15 @@ public class consultar_c extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnrech, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(btnaprob, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(290, Short.MAX_VALUE)
+                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(301, 301, 301))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnaprob)
-                    .addComponent(btnrech)
-                    .addComponent(salir))
+                .addComponent(salir)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -308,7 +273,7 @@ public class consultar_c extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 871, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(rbtinversiones)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,7 +320,6 @@ public class consultar_c extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          bloquear();
         if((txt_cod.getText().equals(""))){
                   JOptionPane.showMessageDialog(this, "campo vacio  \n¡Verifique! \n " , "ADVERTENCIA!", JOptionPane.INFORMATION_MESSAGE );
           }
@@ -534,90 +498,7 @@ public class consultar_c extends javax.swing.JInternalFrame {
         seleccionar=jTable1.rowAtPoint(evt.getPoint());
          txt_cod.setText(String.valueOf(jTable1.getValueAt(seleccionar, 0)));
     }//GEN-LAST:event_jTable1MouseClicked
-
-    private void btnrechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrechActionPerformed
-         if (rbtinversiones.isSelected()){
-        try {
-             stmt= con.createStatement();
-            if(seleccionar!=-1){ rs = stmt.executeQuery("update solicitud_inversion set estado='Rechazado' where numero_identificacion='"+txt_cod.getText()+"';");
-            }else{
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-            }
-                
-        } catch (Exception e) {
-            if(e.getMessage().contains("No results")){
-                JOptionPane.showMessageDialog(this, "Solicitud Rechazada");
-            }
-         } 
-         
-   
-        } 
-          if (rbtcreditos.isSelected()){
-        try {
-             stmt= con.createStatement();
-            if(seleccionar!=-1){ rs = stmt.executeQuery("update solicitud_creditos set estado='Rechazado' where numero_identificacion='"+txt_cod.getText()+"';");
-            }else{
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-            }
-                
-        } catch (Exception e) {
-            if(e.getMessage().contains("No results")){
-                JOptionPane.showMessageDialog(this, "Solicitud Rechazada");
-            }
-         } 
-         
-   
-        }
-    }//GEN-LAST:event_btnrechActionPerformed
     
-    private void btnaprobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaprobActionPerformed
-       
-        if (rbtinversiones.isSelected()){
-        try {
-            
-            stmt= con.createStatement();
-            if(seleccionar!=-1){
-                rs = stmt.executeQuery("update solicitud_inversion set estado='Aprobado' where numero_identificacion='"+txt_cod.getText()+"';");
-            }else{
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-            }
-
-           
-        } catch (Exception e) {
-            if(e.getMessage().contains("No results")){
-                JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
-            }
-           
-                      }     
-        
-       }
-      if (rbtcreditos.isSelected()){
-        try {
-            
-            stmt= con.createStatement();
-            if(seleccionar!=-1){
-                rs = stmt.executeQuery("update solicitud_creditos set estado='Aprobado' where numero_identificacion='"+txt_cod.getText()+"';");
-            }else{
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-            }
-
-           
-        } catch (Exception e) {
-            if(e.getMessage().contains("No results")){
-                JOptionPane.showMessageDialog(this, "Solicitud Aceptada");
-            }
-           
-                      }     
-        
-       }
-   
-   
-   
-   
-   
-   
-    }//GEN-LAST:event_btnaprobActionPerformed
-
     private void rbtcreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtcreditosActionPerformed
     
     }//GEN-LAST:event_rbtcreditosActionPerformed
@@ -653,8 +534,6 @@ public class consultar_c extends javax.swing.JInternalFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnaprob;
-    private javax.swing.JButton btnrech;
     private javax.swing.ButtonGroup grupo_botones;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

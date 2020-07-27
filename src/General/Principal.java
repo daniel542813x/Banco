@@ -251,7 +251,6 @@ public class Principal extends javax.swing.JFrame {
         jmCuentasEm.setForeground(new java.awt.Color(0, 51, 51));
         jmCuentasEm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/name usr.png"))); // NOI18N
         jmCuentasEm.setText("Cuentas");
-        jmCuentasEm.setActionCommand("Cuentas");
         jmCuentasEm.setFont(new java.awt.Font("Sitka Small", 1, 16)); // NOI18N
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));

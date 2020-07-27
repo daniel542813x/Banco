@@ -129,7 +129,7 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
         try {
             Class.forName("org.postgresql.Driver");
             
-            con = DriverManager.getConnection(url, "estevan",password);
+            con = DriverManager.getConnection(url, "estevan","");
             
             if (con != null) {
                 System.out.println("Conectando a Base de Datos...");
@@ -539,7 +539,7 @@ public class consultar_jefe extends javax.swing.JInternalFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         
         seleccionar=jTable1.rowAtPoint(evt.getPoint());
-         txt_cod.setText(String.valueOf(jTable1.getValueAt(seleccionar, 0)));
+         txt_cod.setText(String.valueOf(jTable1.getValueAt(seleccionar, 6)));
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnrechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrechActionPerformed
