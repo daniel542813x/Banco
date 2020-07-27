@@ -500,6 +500,20 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField12ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTextField1.setText("");
+
+        jTextField1.setText("");
+        jTextField3.setText("");
+        jTextField2.setText("");
+        choice2.select("");
+        jTextField5.setText("");
+        jTextField4.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField10.setText("");
+        jTextField9.setText("");
+        jTextField11.setText("");
         if(!jTextField12.getText().isEmpty()){
             consultaSQL="select * from clientes where num_ide='"+jTextField12.getText()+"';";
             ResultSet set =conectarBD();
@@ -507,6 +521,8 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
 //                if(set.getRow()==0){
 //                    JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
 //                }
+                System.out.println(jTextField3.getText().length());
+
                 while (set.next()){
                     jTextField1.setText(set.getString("num_ide"));
 
@@ -514,9 +530,6 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
                     jTextField1.setText(set.getString("num_ide"));
                     jTextField3.setText(set.getString("nom_cli"));
                     jTextField2.setText(set.getString("ape_cli"));
-                    if(jTextField3.getText().equalsIgnoreCase("")){
-                        JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
-                    }
                     choice2.select(set.getString("sex_cli"));
                     jTextField5.setText(set.getString("est_civ_cli"));
                     jTextField4.setText(set.getString("dia_nac"));
@@ -527,6 +540,9 @@ public class Ver_Actualizar extends javax.swing.JInternalFrame {
                     jTextField9.setText(set.getString("tel_cli"));
                     jTextField11.setText(set.getString("correo_cli"));
             }
+                    if(jTextField3.getText().length()==0){
+                        JOptionPane.showMessageDialog(this, "Error, el cliente no se encuentra registrado");
+                    }             
             } catch (Exception e) {
                 System.out.println(e.getMessage());
            }
